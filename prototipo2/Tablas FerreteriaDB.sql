@@ -28,7 +28,7 @@ CREATE TABLE ROL (
     NombreRol NVARCHAR(50)
 );
 GO
-
+select * from rol
 ----- INSERTS DE ROLES -----
 INSERT INTO ROL (NombreRol) VALUES ('Administrador');
 INSERT INTO ROL (NombreRol) VALUES ('Cliente');

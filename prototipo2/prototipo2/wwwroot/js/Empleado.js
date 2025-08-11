@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const datatablesSimple = document.getElementById('datatablesSimple');
     if (datatablesSimple) {
         new simpleDatatables.DataTable(datatablesSimple, {
+            responsive: true,
             perPage: 10, // 10 filas por página
             labels: {
                 placeholder: "Buscar empleado...", // Texto del buscador
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             columns: [
                 { select: 0, sort: "asc" }, // Ordenar por ID ascendente al inicio
-                { select: 5, type: "date", format: "DD/MM/YYYY" } // Formato para fecha
+                { select: 10, type: "date", format: "DD/MM/YYYY" } // Formato para fecha
             ]
         });
     }

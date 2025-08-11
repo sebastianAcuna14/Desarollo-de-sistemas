@@ -12,11 +12,13 @@ wwwroot\images\logo_light.png
 wwwroot\js\Categoria.js
 wwwroot\js\datatables-simple-demo.js
 wwwroot\js\Empleado.js
+wwwroot\js\FinanzaTabla.js
 wwwroot\js\Producto.js
 wwwroot\js\Proveedor.js
 wwwroot\js\Reparacion.js
 wwwroot\js\scripts.js
 wwwroot\js\site.js
+wwwroot\js\tablaventas.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap.min.css

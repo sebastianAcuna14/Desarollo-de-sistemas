@@ -14,15 +14,15 @@ namespace prototipo2.Models
         public required string Correo { get; set; }
         public string? Telefono { get; set; }
         public int IdRol { get; set; }
-        public string NombreRol { get; set; } = "";
+        public string? NombreRol { get; set; } = "";
 
         [Required(ErrorMessage = "La cédula es obligatoria")]
         [RegularExpression(@"^\d{9,12}$", ErrorMessage = "La cédula debe tener entre 9 y 12 dígitos")]
-        public required string Cedula { get; set; }
+        public string? Cedula { get; set; }
 
         [Required(ErrorMessage = "El rol es obligatorio")]
         [StringLength(50)]
-        public required string Rol { get; set; }
+       
         public string? Contrasena { get; set; }
         [Range(0.01, double.MaxValue, ErrorMessage = "El salario debe ser mayor que cero")]
         public required decimal Salario { get; set; }

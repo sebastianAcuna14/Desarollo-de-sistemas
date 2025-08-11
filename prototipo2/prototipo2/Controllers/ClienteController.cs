@@ -86,7 +86,7 @@ namespace prototipo2.Controllers
                     new
                     {
                         cliente.Correo,
-                        Contrasena = contrasenaEncriptada
+                        cliente.Contrasena
                     });
                 if (resultadoCliente != null)
                 {

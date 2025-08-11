@@ -20,27 +20,24 @@ GO
 
 
 
-Create PROCEDURE ValidarInicioSesionCliente
-	@Correo varchar(100),
-	@Contrasena varchar(50)
+ALTER PROCEDURE ValidarInicioSesion
+    @Correo VARCHAR(100),
+    @Contrasena VARCHAR(50)
 AS
 BEGIN
-
-	SELECT	Cedula,
-			idCliente,
-			Nombre,
-			Apellido,
-			Correo,
-			Telefonos,
-			Cedula
-
-
-
-
-	  FROM	dbo.Cliente
-	WHERE	Correo = @Correo
-		AND Contrasena = @Contrasena
-		
+    SELECT
+        C.Cedula,
+        C.idCliente,
+        C.Nombre,
+        C.Apellido,
+        C.Correo,
+        C.Telefonos, 
+        C.IdRol,
+        R.NombreRol         
+    FROM Cliente C
+    JOIN Rol R ON C.IdRol = R.IdRol
+    WHERE C.Correo = @Correo
+      AND C.Contrasena = @Contrasena;
 END
 GO
 
@@ -69,16 +66,16 @@ GO
 Create or alter PROCEDURE RegistrarEmpleado
     @Nombre VARCHAR(100),
     @Apellido VARCHAR(100),
+	@cedula varchar(15),
     @Correo VARCHAR(100),
     @Telefono VARCHAR(20),
     @Contrasena VARCHAR(50)
 	
 AS
 BEGIN
-    INSERT INTO Empleado( Nombre, Apellido, Correo, Telefono, Contrasena)
-    VALUES (@Nombre,@Apellido, @Telefono, @Correo, @Contrasena);
+    INSERT INTO Empleado( Nombre, Apellido,Cedula, Telefono, Correo, Contrasena,IdRol)
+    VALUES (@Nombre,@Apellido, @Cedula, @Telefono, @Correo, @Contrasena,1);
 END;
-GO
 
 CREATE PROCEDURE ObtenerEmpleado
 AS
@@ -816,3 +813,5 @@ BEGIN
     ORDER BY 
         p.FechaCreacion DESC
 END
+
+select * from Cliente

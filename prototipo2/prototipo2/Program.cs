@@ -34,7 +34,7 @@ app.UseSession();
 
 app.MapControllerRoute(
      name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Cliente}/{action=InicioSesion}/{id?}");
 
 app.MapControllerRoute(
     name: "catalogo",
