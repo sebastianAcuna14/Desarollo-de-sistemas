@@ -481,7 +481,6 @@ BEGIN
     VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria);
 END
 
-SELECT * FROM 
 
 --Listar productos
 CREATE OR ALTER PROCEDURE ObtenerProductos
@@ -533,7 +532,7 @@ GO
 
 
 --Eliminar el producto del inventario
-CREATE PROCEDURE EliminarProducto
+CREATE OR ALTER PROCEDURE EliminarProducto
     @IdProducto INT
 AS
 BEGIN
@@ -544,7 +543,7 @@ END;
 
 --  Categoria
 
-CREATE PROCEDURE CrearCategoria
+CREATE OR ALTER PROCEDURE CrearCategoria
     @Nombre VARCHAR(100),
     @Descripcion VARCHAR(255)
 AS
@@ -554,20 +553,20 @@ BEGIN
 END;
 
 
-CREATE PROCEDURE ObtenerCategorias
+CREATE OR ALTER PROCEDURE ObtenerCategorias
 AS
 BEGIN
     SELECT * FROM Categoria;
 END;
 
-CREATE PROCEDURE ConsultarCategoriaID
+CREATE OR ALTER PROCEDURE ConsultarCategoriaID
     @IdCategoria INT
 AS
 BEGIN
     SELECT * FROM Categoria WHERE IdCategoria = @IdCategoria;
 END;
 
-CREATE PROCEDURE ActualizarCategoria
+CREATE OR ALTER PROCEDURE ActualizarCategoria
     @IdCategoria INT,
     @Nombre VARCHAR(100),
     @Descripcion VARCHAR(255)
@@ -579,7 +578,7 @@ BEGIN
     WHERE IdCategoria = @IdCategoria;
 END;
 
-CREATE PROCEDURE EliminarCategoria
+CREATE OR ALTER PROCEDURE EliminarCategoria
     @IdCategoria INT
 AS
 BEGIN
@@ -644,152 +643,7 @@ END;
 
 select * from cliente
 
-
--- ✅ Traer todos los productos
-CREATE OR ALTER PROCEDURE ObtenerProductos
-AS
-BEGIN
-    SELECT 
-        p.IdProducto,
-        p.Nombre,
-        p.Descripcion,
-        p.Cantidad,
-        p.Precio,
-        p.IdProveedor,
-        pr.NombreEmpresa AS NombreProveedor,
-        p.IdCategoria,
-        c.Nombre AS NombreCategoria
-    FROM INVENTARIO p
-    LEFT JOIN Proveedor pr ON p.IdProveedor = pr.IdProveedor
-    LEFT JOIN Categoria c ON p.IdCategoria = c.IdCategoria
-END
-GO
-
--- ✅ Traer un producto por ID
-CREATE OR ALTER PROCEDURE ObtenerProductoPorId
-    @IdProducto INT
-AS
-BEGIN
-    SELECT 
-        p.IdProducto,
-        p.Nombre,
-        p.Descripcion,
-        p.Cantidad,
-        p.Precio,
-        p.IdProveedor,
-        pr.NombreEmpresa AS NombreProveedor,
-        p.IdCategoria,
-        c.Nombre AS NombreCategoria
-    FROM INVENTARIO p
-    LEFT JOIN Proveedor pr ON p.IdProveedor = pr.IdProveedor
-    LEFT JOIN Categoria c ON p.IdCategoria = c.IdCategoria
-    WHERE p.IdProducto = @IdProducto
-END
-GO
-/////
-ALTER TABLE INVENTARIO 
-ADD EnCatalogo BIT DEFAULT 0;
-////
-UPDATE INVENTARIO
-SET EnCatalogo = 0
-WHERE IdProducto = @id;
-/////
-
-///////////////////
-CREATE PROCEDURE ObtenerProductos
-AS
-BEGIN
-    SELECT 
-        I.IdProducto,
-        I.Nombre,
-        I.Descripcion,
-        I.Cantidad,
-        I.Categoria,
-        I.Precio,
-        I.IdProveedor,
-        P.NombreEmpresa AS NombreProveedor
-    FROM 
-        INVENTARIO I
-    INNER JOIN 
-        PROVEEDOR P ON I.IdProveedor = P.IDProveedor
-END;
-
-CREATE PROCEDURE ConsultarEjercicios
-AS
-BEGIN
-    SELECT 
-        e.Consecutivo,
-        e.Nombre,
-        e.Fecha,
-        e.Monto,
-        e.TipoEjercicio,
-        t.DescripcionTipoEjercicio
-    FROM Ejercicios e
-    INNER JOIN TiposEjercicio t ON e.TipoEjercicio = t.TipoEjercicio;
-END;
-CREATE OR ALTER PROCEDURE ObtenerCategorias
-AS
-BEGIN
-    SELECT IdCategoria, Nombre, Descripcion
-    FROM CATEGORIA;
-END
-
-
---Actualizar/editar prdcto
-CREATE OR ALTER PROCEDURE ActualizarProducto
-    @IdProducto   INT,
-    @Nombre       VARCHAR(100),
-    @Descripcion  VARCHAR(255),
-    @Cantidad     INT,
-    @Precio       DECIMAL(10,2),
-    @IdProveedor  INT,
-    @IdCategoria  INT
-AS
-BEGIN
-    UPDATE INVENTARIO
-    SET Nombre      = @Nombre,
-        Descripcion = @Descripcion,
-        Cantidad    = @Cantidad,
-        Precio      = @Precio,
-        IdProveedor = @IdProveedor,
-        IdCategoria = @IdCategoria
-    WHERE IdProducto = @IdProducto;
-END
-
-
---Eliminar el producto del inventario
-CREATE PROCEDURE EliminarProducto
-    @IdProducto INT
-AS
-BEGIN
-    DELETE FROM INVENTARIO
-    WHERE IdProducto = @IdProducto
-END;
---Para mostrar el producto x ID
-CREATE PROCEDURE ObtenerProductoPorId
-    @IdProducto INT
-AS
-BEGIN
-    SELECT * FROM INVENTARIO WHERE IdProducto = @IdProducto
-END;
-
-CREATE OR ALTER PROCEDURE ObtenerProductos
-AS
-BEGIN
-    SELECT 
-        I.IdProducto,
-        I.Nombre,
-        I.Descripcion,
-        I.Cantidad,
-        I.Precio,
-        I.IdProveedor,
-        P.NombreEmpresa   AS NombreProveedor,
-        I.IdCategoria,
-        C.Nombre          AS CategoriaNombre
-    FROM INVENTARIO I
-    INNER JOIN PROVEEDOR P ON I.IdProveedor = P.IDProveedor
-    INNER JOIN CATEGORIA C ON I.IdCategoria = C.IdCategoria;
-END
+--Productos destacados
 
 CREATE PROCEDURE ObtenerProductosDestacados
 AS
@@ -814,4 +668,3 @@ BEGIN
         p.FechaCreacion DESC
 END
 
-select * from Cliente
