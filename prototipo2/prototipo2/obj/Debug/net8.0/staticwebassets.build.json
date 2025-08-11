@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B06Ehh69AN2DRUp8foqSDIdJUYG2iKlliaXNk7YS5Jw=",
+  "Hash": "D/0P8ld91B80ELW9KcDRtTtKuTWQ/VOrkVJwXokOusM=",
   "Source": "prototipo2",
   "BasePath": "_content/prototipo2",
   "Mode": "Default",
@@ -321,6 +321,25 @@
       "OriginalItemSpec": "wwwroot\\js\\Empleado.js"
     },
     {
+      "Identity": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+      "SourceId": "prototipo2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\",
+      "BasePath": "_content/prototipo2",
+      "RelativePath": "js/FinanzaTabla.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\FinanzaTabla.js"
+    },
+    {
       "Identity": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\Producto.js",
       "SourceId": "prototipo2",
       "SourceType": "Discovered",
@@ -414,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\tablaventas.js",
+      "SourceId": "prototipo2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\",
+      "BasePath": "_content/prototipo2",
+      "RelativePath": "js/tablaventas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\tablaventas.js"
     },
     {
       "Identity": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

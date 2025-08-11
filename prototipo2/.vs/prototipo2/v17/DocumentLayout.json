@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\controllers\\carritocontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\controllers\\carritocontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\views\\finanzas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\finanzas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\models\\paypalservicecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\models\\paypalservicecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\views\\carrito\\procesarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\carrito\\procesarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\models\\confirmarpagodto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\models\\confirmarpagodto .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\views\\carrito\\paypal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\carrito\\paypal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\joshua\\desktop\\nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\finanzatabla.js||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\wwwroot\\js\\finanzatabla.js||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 2606,
-          "SelectedChildIndex": 65,
+          "SelectedChildIndex": 64,
           "Children": [
             {
               "$type": "Bookmark",
@@ -290,80 +274,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProcesarPago.cshtml",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Carrito\\ProcesarPago.cshtml",
-              "RelativeDocumentMoniker": "prototipo2\\Views\\Carrito\\ProcesarPago.cshtml",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Carrito\\ProcesarPago.cshtml",
-              "RelativeToolTip": "prototipo2\\Views\\Carrito\\ProcesarPago.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T19:41:42.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PayPalServicecs.cs",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\PayPalServicecs.cs",
-              "RelativeDocumentMoniker": "prototipo2\\Models\\PayPalServicecs.cs",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\PayPalServicecs.cs",
-              "RelativeToolTip": "prototipo2\\Models\\PayPalServicecs.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAUwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T19:17:54.215Z",
+              "Title": "FinanzaTabla.js",
+              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+              "RelativeDocumentMoniker": "prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+              "RelativeToolTip": "prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-11T00:37:39.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarritoController .cs",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Controllers\\CarritoController .cs",
-              "RelativeDocumentMoniker": "prototipo2\\Controllers\\CarritoController .cs",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Controllers\\CarritoController .cs",
-              "RelativeToolTip": "prototipo2\\Controllers\\CarritoController .cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAM8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T08:30:11.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ConfirmarPagoDTO .cs",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\ConfirmarPagoDTO .cs",
-              "RelativeDocumentMoniker": "prototipo2\\Models\\ConfirmarPagoDTO .cs",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\ConfirmarPagoDTO .cs",
-              "RelativeToolTip": "prototipo2\\Models\\ConfirmarPagoDTO .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T07:58:46.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Paypal.cshtml",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
-              "RelativeDocumentMoniker": "prototipo2\\Views\\Carrito\\Paypal.cshtml",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
-              "RelativeToolTip": "prototipo2\\Views\\Carrito\\Paypal.cshtml",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAcwIUAAACSAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Finanzas\\Index.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Finanzas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Views\\Finanzas\\Index.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Finanzas\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-09T07:56:59.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Carrito.cs",
-              "DocumentMoniker": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\Carrito.cs",
-              "RelativeDocumentMoniker": "prototipo2\\Models\\Carrito.cs",
-              "ToolTip": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\Models\\Carrito.cs",
-              "RelativeToolTip": "prototipo2\\Models\\Carrito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T07:56:51.884Z",
+              "WhenOpened": "2025-08-11T00:34:13.75Z",
               "EditorCaption": ""
             }
           ]

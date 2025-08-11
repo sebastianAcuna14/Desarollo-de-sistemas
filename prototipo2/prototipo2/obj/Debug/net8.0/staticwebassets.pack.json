@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\js\\Empleado.js"
     },
     {
+      "Id": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\FinanzaTabla.js",
+      "PackagePath": "staticwebassets\\js\\FinanzaTabla.js"
+    },
+    {
       "Id": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\Producto.js",
       "PackagePath": "staticwebassets\\js\\Producto.js"
     },
@@ -79,6 +83,10 @@
     {
       "Id": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\js\\tablaventas.js",
+      "PackagePath": "staticwebassets\\js\\tablaventas.js"
     },
     {
       "Id": "C:\\Users\\JOSHUA\\Desktop\\Nueva carpeta\\prototipo2\\prototipo2\\wwwroot\\lib\\bootstrap\\LICENSE",
