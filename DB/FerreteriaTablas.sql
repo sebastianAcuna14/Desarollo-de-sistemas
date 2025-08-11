@@ -106,6 +106,19 @@ CREATE TABLE Venta (
 );
 GO
 
+ALTER TABLE Venta
+ADD 
+    MetodoPago NVARCHAR(50) NULL,
+    MontoTotal DECIMAL(18,2) NULL,
+    Contacto NVARCHAR(100) NULL,
+    Telefono NVARCHAR(20) NULL,
+    Direccion NVARCHAR(200) NULL,
+    ProvinciaId INT NULL,
+    DepartamentoId INT NULL,
+    DistritoId INT NULL,
+    PaypalOrderId NVARCHAR(100) NULL;
+
+
 -- Tabla de productos vendidos
 CREATE TABLE ItemsVendidos (
     Id INT PRIMARY KEY IDENTITY(1,1),
@@ -369,3 +382,8 @@ BEGIN
     SET Cantidad = @Cantidad
     WHERE Id = @Id
 END
+
+INSERT INTO Carrito (ProductoId, Cantidad, Nombre_Producto, Precio)
+VALUES 
+(1, 2, 'Martillo de acero', 8.50),
+(2, 1, 'Taladro eléctrico', 59.99);

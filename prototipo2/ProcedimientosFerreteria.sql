@@ -668,3 +668,207 @@ BEGIN
         p.FechaCreacion DESC
 END
 
+<<<<<<< Updated upstream
+=======
+-- Crear una venta
+CREATE OR ALTER PROCEDURE CrearVenta
+    @Fecha DATETIME,
+    @NotaCreditoId INT = NULL
+AS
+BEGIN
+    INSERT INTO Venta (Fecha, NotaCreditoId)
+    VALUES (@Fecha, @NotaCreditoId);
+
+    SELECT SCOPE_IDENTITY() AS NuevaVentaId;
+END
+GO
+
+CREATE OR ALTER PROCEDURE ObtenerVentas
+AS
+BEGIN
+    SELECT * FROM Venta;
+END
+GO
+
+
+-- Consultar venta por ID
+CREATE OR ALTER PROCEDURE ConsultarVentaPorId
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM Venta WHERE Id = @Id;
+END
+GO
+
+
+-- Actualizar venta
+CREATE OR ALTER PROCEDURE ActualizarVenta
+    @Id INT,
+    @Fecha DATETIME,
+    @NotaCreditoId INT = NULL
+AS
+BEGIN
+    UPDATE Venta
+    SET Fecha = @Fecha,
+        NotaCreditoId = @NotaCreditoId
+    WHERE Id = @Id;
+END
+GO
+
+
+-- Eliminar venta
+CREATE OR ALTER PROCEDURE EliminarVenta
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Venta WHERE Id = @Id;
+END
+GO
+
+-- Crear movimiento financiero
+CREATE OR ALTER PROCEDURE CrearMovimientoFinanciero
+    @Fecha DATETIME,
+    @Descripcion NVARCHAR(500),
+    @Monto DECIMAL(10,2),
+    @Tipo NVARCHAR(30),
+    @FechaVencimiento DATE = NULL,
+    @Pagada BIT = 0,
+    @Anulada BIT = 0
+AS
+BEGIN
+    INSERT INTO Finanza (Fecha, Descripcion, Monto, Tipo, FechaVencimiento, Pagada, Anulada)
+    VALUES (@Fecha, @Descripcion, @Monto, @Tipo, @FechaVencimiento, @Pagada, @Anulada);
+
+    SELECT SCOPE_IDENTITY() AS NuevoMovimientoId;
+END
+GO
+
+
+-- Obtener movimientos financieros no anulados
+CREATE OR ALTER PROCEDURE ObtenerMovimientosFinancieros
+AS
+BEGIN
+    SELECT * FROM Finanza
+    WHERE Anulada = 0;
+END
+GO
+
+
+-- Actualizar movimiento financiero existente
+CREATE OR ALTER PROCEDURE ActualizarMovimientoFinanciero
+    @Id INT,
+    @Fecha DATETIME,
+    @Descripcion NVARCHAR(500),
+    @Monto DECIMAL(10,2),
+    @Tipo NVARCHAR(30),
+    @FechaVencimiento DATE = NULL,
+    @Pagada BIT,
+    @Anulada BIT
+AS
+BEGIN
+    UPDATE Finanza
+    SET Fecha = @Fecha,
+        Descripcion = @Descripcion,
+        Monto = @Monto,
+        Tipo = @Tipo,
+        FechaVencimiento = @FechaVencimiento,
+        Pagada = @Pagada,
+        Anulada = @Anulada
+    WHERE Id = @Id;
+END
+GO
+
+
+-- Marcar cuenta por cobrar como pagada (y cambiar tipo a ingreso)
+CREATE OR ALTER PROCEDURE MarcarCuentaPorCobrarComoPagada
+    @Id INT
+AS
+BEGIN
+    UPDATE Finanza
+    SET Pagada = 1,
+        Tipo = 'INGRESO'
+    WHERE Id = @Id AND Tipo = 'CUENTA_POR_COBRAR';
+END
+GO
+
+
+-- Eliminar movimiento financiero (eliminación real)
+CREATE OR ALTER PROCEDURE EliminarMovimientoFinanciero
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Finanza WHERE Id = @Id;
+END
+GO
+
+
+USE master;
+GO
+
+CREATE TABLE Producto (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Nombre_Producto NVARCHAR(100) NOT NULL,
+    Categoria NVARCHAR(100) NOT NULL,
+    Cantidad INT NOT NULL CHECK (Cantidad >= 0),
+    Proveedor NVARCHAR(100) NOT NULL,
+    Precio DECIMAL(10, 2) NOT NULL CHECK (Precio > 0)
+);
+
+
+-- Procedimiento para agregar al carrito
+CREATE OR ALTER PROCEDURE AgregarAlCarrito
+    @ProductoId INT,
+    @Cantidad INT,
+    @Nombre_Producto NVARCHAR(100),  
+    @Precio DECIMAL(18, 2)
+AS
+BEGIN
+    INSERT INTO Carrito (ProductoId, Cantidad, Nombre_Producto, Precio)
+    VALUES (@ProductoId, @Cantidad, @Nombre_Producto, @Precio)
+END
+
+-- Procedimiento para obtener carrito
+CREATE OR ALTER PROCEDURE ObtenerCarrito
+AS
+BEGIN
+    SELECT 
+        Id,
+        ProductoId,
+        Nombre_Producto,
+        Precio,
+        Cantidad,
+        (Precio * Cantidad) AS Subtotal
+    FROM Carrito
+END
+
+-- Procedimiento para eliminar un producto del carrito
+CREATE OR ALTER PROCEDURE EliminarDelCarrito
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Carrito WHERE Id = @Id
+END
+
+-- Procedimiento para vaciar el carrito
+CREATE OR ALTER PROCEDURE LimpiarCarrito
+AS
+BEGIN
+    DELETE FROM Carrito
+END
+
+-- Procedimiento para actualizar la cantidad
+CREATE OR ALTER PROCEDURE ActualizarCantidadCarrito
+    @Id INT,
+    @Cantidad INT
+AS
+BEGIN
+    UPDATE Carrito
+    SET Cantidad = @Cantidad
+    WHERE Id = @Id
+END
+
+INSERT INTO Carrito (ProductoId, Cantidad, Nombre_Producto, Precio)
+VALUES 
+(1, 2, 'Martillo de acero', 8.50),
+(2, 1, 'Taladro eléctrico', 59.99);
+>>>>>>> Stashed changes

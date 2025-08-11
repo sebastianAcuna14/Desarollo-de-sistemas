@@ -140,6 +140,10 @@ namespace prototipo2.Controllers
         [HttpPost]
         public async Task<IActionResult> ConfirmarPago([FromBody] ConfirmarPagoDTO model)
         {
+            if (model == null)
+            {
+                return Json(new { success = false, error = "Datos de pago inválidos" });
+            }
             using var db = Connection;
             db.Open();
             using var transaction = db.BeginTransaction();
@@ -163,24 +167,31 @@ namespace prototipo2.Controllers
                 // Insertar venta con datos del pago y contacto
                 var fechaVenta = DateTime.Now;
                 var ventaId = await db.ExecuteScalarAsync<int>(
-                    @"INSERT INTO Venta (Fecha, NotaCreditoId, MetodoPago, MontoTotal, Contacto, Telefono, Direccion, ProvinciaId, DepartamentoId, DistritoId, PaypalOrderId)
-                      VALUES (@Fecha, NULL, 'Paypal', @MontoTotal, @Contacto, @Telefono, @Direccion, @Provincia, @Departamento, @Distrito, @OrderId);
-                      SELECT CAST(SCOPE_IDENTITY() as int);",
-                    new
-                    {
-                        Fecha = fechaVenta,
-                        MontoTotal = model.total,
-                        Contacto = model.contacto,
-                        Telefono = model.telefono,
-                        Direccion = model.direccion,
-                        Provincia = model.IdProvincia,
-                        Departamento = model.IdDepartamento,
-                        Distrito = model.IdDistrito,
-                        OrderId = model.orderId
-                    },
-                    transaction
-                );
+         @"INSERT INTO Venta (Fecha, NotaCreditoId, MetodoPago, MontoTotal, Contacto, Telefono, 
+                          Direccion, ProvinciaId, DepartamentoId, DistritoId, PaypalOrderId)
+          VALUES (@Fecha, NULL, 'TARJETA', @MontoTotal, @Contacto, @Telefono, 
+                  @Direccion, @Provincia, @Departamento, @Distrito, @OrderId);
+          SELECT CAST(SCOPE_IDENTITY() as int);",
+         new
+         {
+             Fecha = fechaVenta,
+             MontoTotal = model.total,
+             Contacto = model.contacto,
+             Telefono = model.telefono,
+             Direccion = model.direccion,
+             Provincia = model.IdProvincia,
+             Departamento = model.IdDepartamento,
+             Distrito = model.IdDistrito,
+             OrderId = model.orderId
+         },
+         transaction);
 
+                // Insertar también en MetodosPago
+                await db.ExecuteAsync(
+                    @"INSERT INTO MetodosPago (VentaId, Monto, Tipo)
+          VALUES (@VentaId, @Monto, 'TARJETA')",
+                    new { VentaId = ventaId, Monto = model.total },
+                    transaction);
                 // Insertar cada producto vendido
                 foreach (var item in carrito)
                 {
@@ -215,7 +226,9 @@ namespace prototipo2.Controllers
         // Vista de agradecimiento tras pago exitoso
         public IActionResult Gracias()
         {
-            return View("ProcesarPago");
+            TempData["CompraExitosa"] = true;
+            return RedirectToAction("Index", "Home");
         }
+
     }
 }

@@ -12,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddScoped<IUtilitarios, Utilitarios>();
 builder.Services.AddHttpClient<PayPalService>();
+builder.Services.AddScoped<PayPalService>();
 
 
 var app = builder.Build();

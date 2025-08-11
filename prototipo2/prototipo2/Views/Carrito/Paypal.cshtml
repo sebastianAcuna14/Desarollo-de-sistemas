@@ -46,6 +46,8 @@
                 </div>
 
                 <form id="datosVentaForm">
+                    @Html.AntiForgeryToken()
+
                     <h5 class="mb-3">Datos de Envío</h5>
 
                     <div class="mb-3">
@@ -135,11 +137,10 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        var total = "@total.ToString("F2", CultureInfo.InvariantCulture)";
-
-        // Validar que el total sea mayor que 0
-        if (parseFloat(total) <= 0) {
-            alert("El total debe ser mayor que cero");
+        var total = parseFloat("@total.ToString("F2", CultureInfo.InvariantCulture)");
+        if (isNaN(total) || total <= 0) {
+            console.error("Total inválido:", "@total");
+            alert("Error: El total debe ser mayor a cero.");
             return;
         }
 
@@ -151,7 +152,6 @@
                 label: 'paypal'
             },
             createOrder: function (data, actions) {
-                // Validar formulario antes de proceder
                 const form = document.getElementById('datosVentaForm');
                 if (!form.checkValidity()) {
                     alert("Por favor complete todos los campos requeridos");
@@ -162,7 +162,7 @@
                     purchase_units: [{
                         amount: {
                             value: total,
-                            currency_code: 'USD' 
+                            currency_code: 'USD'
                         }
                     }]
                 });
@@ -192,37 +192,27 @@
                         },
                         body: JSON.stringify(info)
                     })
-                        .then(res => {
-                            if (!res.ok) {
-                                throw new Error('Error en la red');
-                            }
-                            return res.json();
+                        .then(response => {
+                            if (!response.ok) throw new Error('Error en la red');
+                            return response.json();
                         })
-                        .then(res => {
-                            if (res.success) {
-                                window.location = '@Url.Action("Gracias", "Carrito")';
+                        .then(data => {
+                            if (data.success) {
+                                alert("¡Compra confirmada con éxito!");
+                                window.location.href = '@Url.Action("Index", "Home")';
                             } else {
-                                alert("Error al procesar la venta: " + (res.error || "Error desconocido"));
+                                alert("Error: " + (data.error || "Error al procesar el pago"));
                             }
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            alert("Error de red: " + error.message);
+                            alert("Error: " + error.message);
                         });
                 });
             },
             onError: function (err) {
                 console.error('PayPal Error:', err);
                 alert("Ocurrió un error con PayPal: " + err.toString());
-            },
-            onClick: function () {
-                // Validar formulario al hacer clic
-                const form = document.getElementById('datosVentaForm');
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return false;
-                }
-                return true;
             }
         }).render('#paypal-button-container');
     });

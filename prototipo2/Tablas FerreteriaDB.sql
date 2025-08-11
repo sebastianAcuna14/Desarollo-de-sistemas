@@ -134,3 +134,88 @@ VALUES
 (1, 2, 'Martillo de acero', 8.50),
 (2, 1, 'Taladro eléctrico', 59.99);
 
+
+-- Tabla de movimientos financieros
+CREATE TABLE Finanza (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+    Descripcion NVARCHAR(500) NOT NULL,
+    Monto DECIMAL(10,2) NOT NULL,
+    Tipo NVARCHAR(30) NOT NULL,
+    FechaVencimiento DATE NULL,
+    Pagada BIT NOT NULL DEFAULT 0,
+    Anulada BIT NOT NULL DEFAULT 0
+);
+GO
+
+-- Tabla de Notas de Crédito
+CREATE TABLE NotaCredito (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+    Monto DECIMAL(18,2) NOT NULL,
+    Comentario NVARCHAR(MAX) NULL
+);
+GO
+
+-- Tabla principal de ventas
+CREATE TABLE Venta (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATETIME NOT NULL,
+    NotaCreditoId INT NULL,
+    FOREIGN KEY (NotaCreditoId) REFERENCES NotaCredito(Id)
+);
+GO
+
+ALTER TABLE Venta
+ADD 
+    MetodoPago NVARCHAR(50) NULL,
+    MontoTotal DECIMAL(18,2) NULL,
+    Contacto NVARCHAR(100) NULL,
+    Telefono NVARCHAR(20) NULL,
+    Direccion NVARCHAR(200) NULL,
+    ProvinciaId INT NULL,
+    DepartamentoId INT NULL,
+    DistritoId INT NULL,
+    PaypalOrderId NVARCHAR(100) NULL;
+
+-- Tabla de productos vendidos
+CREATE TABLE ItemsVendidos (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    VentaId INT NOT NULL,
+    Producto NVARCHAR(100) NOT NULL,
+    Cantidad INT NOT NULL,
+    PrecioUnitario DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (VentaId) REFERENCES Venta(Id) ON DELETE CASCADE
+);
+GO
+
+-- Tabla de métodos de pago
+CREATE TABLE MetodosPago (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    VentaId INT NOT NULL,
+    Monto DECIMAL(10,2) NOT NULL,
+    Tipo NVARCHAR(20) NOT NULL,
+    FOREIGN KEY (VentaId) REFERENCES Venta(Id) ON DELETE CASCADE
+);
+GO
+
+-- Tabla de devoluciones
+CREATE TABLE Devoluciones (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    VentaId INT NOT NULL,
+    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+    Motivo NVARCHAR(255),
+    FOREIGN KEY (VentaId) REFERENCES Venta(Id) ON DELETE CASCADE
+);
+GO
+
+-- Productos devueltos por devolución
+CREATE TABLE ItemsDevueltos (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    DevolucionId INT NOT NULL,
+    Producto NVARCHAR(100) NOT NULL,
+    Cantidad INT NOT NULL,
+    Observaciones NVARCHAR(255),
+    FOREIGN KEY (DevolucionId) REFERENCES Devoluciones(Id) ON DELETE CASCADE
+);
+GO

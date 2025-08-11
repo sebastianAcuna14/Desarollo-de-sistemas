@@ -20,6 +20,15 @@
    
     <!-- Custom CSS -->
 	<link href="~/css/styles.css" rel="stylesheet" />
+
+    @if (TempData["CompraExitosa"] != null)
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                alert("¡Compra confirmada con éxito!");
+            });
+        </script>
+    }
 </head>
 <body class="d-flex flex-column min-vh-">
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
