@@ -20,7 +20,7 @@ GO
 
 
 
-ALTER PROCEDURE ValidarInicioSesion
+CREATE PROCEDURE ValidarInicioSesion
     @Correo VARCHAR(100),
     @Contrasena VARCHAR(50)
 AS
@@ -668,8 +668,287 @@ BEGIN
         p.FechaCreacion DESC
 END
 
-<<<<<<< Updated upstream
-=======
+
+
+-- Login
+
+CREATE PROCEDURE RegistrarCliente
+    @Nombre NVARCHAR(100),
+    @Apellido NVARCHAR(100),
+    @Cedula NVARCHAR(15),
+    @Correo NVARCHAR(100),
+    @Telefonos NVARCHAR(50),
+    @Contrasena NVARCHAR(50)
+AS
+BEGIN
+    INSERT INTO dbo.Cliente (Cedula, Nombre, Apellido, Telefonos, Correo, Contrasena)
+    VALUES (@Cedula, @Nombre, @Apellido, @Telefonos, @Correo, @Contrasena);
+END;
+GO
+
+
+
+CREATE PROCEDURE ValidarInicioSesion
+    @Correo VARCHAR(100),
+    @Contrasena VARCHAR(50)
+AS
+BEGIN
+    SELECT
+        C.Cedula,
+        C.idCliente,
+        C.Nombre,
+        C.Apellido,
+        C.Correo,
+        C.Telefonos, 
+        C.IdRol,
+        R.NombreRol         
+    FROM Cliente C
+    JOIN Rol R ON C.IdRol = R.IdRol
+    WHERE C.Correo = @Correo
+      AND C.Contrasena = @Contrasena;
+END
+GO
+
+-----EMPLEADO
+CREATE OR ALTER PROCEDURE ValidarInicioSesionEmpleado
+    @Correo VARCHAR(100),
+    @Contrasena VARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        E.IdEmpleado,
+        E.Nombre,
+        E.Apellido,
+        E.Correo,
+        E.Telefono,
+        E.IdRol,
+        R.NombreRol
+    FROM Empleado E
+    JOIN Rol R ON E.IdRol = R.IdRol
+    WHERE E.Correo = @Correo
+      AND E.Contrasena = @Contrasena
+END
+GO
+
+
+Create or alter PROCEDURE RegistrarEmpleado
+    @Nombre VARCHAR(100),
+    @Apellido VARCHAR(100),
+	@cedula varchar(15),
+    @Correo VARCHAR(100),
+    @Telefono VARCHAR(20),
+    @Contrasena VARCHAR(50)
+	
+AS
+BEGIN
+    INSERT INTO Empleado( Nombre, Apellido,Cedula, Telefono, Correo, Contrasena,IdRol)
+    VALUES (@Nombre,@Apellido, @Cedula, @Telefono, @Correo, @Contrasena,1);
+END;
+
+CREATE PROCEDURE ObtenerEmpleado
+AS
+BEGIN
+    SELECT * FROM Empleado
+END
+------------   
+
+
+CREATE PROCEDURE ValidarCorreo
+	@Correo varchar(100)
+AS
+BEGIN
+
+	SELECT	idCliente,
+		    Cedula,
+			Nombre,
+			Correo
+	  FROM	CLIENTE
+	WHERE	Correo = @Correo
+		
+	
+END
+GO
+
+
+CREATE PROCEDURE ActualizarUsuario
+	@Cedula varchar(20),
+	@Nombre varchar(15),
+	@Correo varchar(100),
+	@idCliente int
+AS
+BEGIN
+	
+	IF NOT EXISTS(SELECT 1 FROM CLIENTE
+				  WHERE Cedula = @Cedula
+					AND Correo = @Correo
+					AND idCliente != @idCliente)
+	BEGIN
+
+		UPDATE	CLIENTE
+		SET		Cedula = @Cedula,
+				Nombre = @Nombre,
+				Correo =  @Correo
+		WHERE	idCliente = @idCliente
+
+	END
+
+END
+GO
+
+
+CREATE PROCEDURE ActualizarContrasenna
+	@idCliente int,
+	@contrasena varchar(255)
+AS
+BEGIN
+	
+	UPDATE	CLIENTE
+	SET		contrasena = @contrasena
+	WHERE	idCliente = @idCliente
+
+END
+GO
+
+--  Pedido
+
+CREATE PROCEDURE Crear_Pedido
+    @Nombre_Producto VARCHAR(50), 
+    @Numero_Pedido VARCHAR(50), 
+    @Cantidad INT, 
+    @FechaPedido DATE, 
+    @Precio DECIMAL(10,2), 
+    @Estado VARCHAR(100),
+	@CorreoCliente VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Pedido (Nombre_Producto, Numero_Pedido, Cantidad, FechaPedido, Precio, Estado, CorreoCliente)
+    VALUES (@Nombre_Producto, @Numero_Pedido, @Cantidad, @FechaPedido, @Precio, @Estado, @CorreoCliente)
+END
+/////////
+CREATE PROCEDURE ObtenerPedido
+AS
+BEGIN
+    SELECT * FROM Empleado
+END
+////////
+CREATE PROCEDURE ActualizarPedido
+    @Id INT, 
+    @Nombre_Producto VARCHAR(50), 
+    @Numero_Pedido VARCHAR(50), 
+    @Cantidad INT, 
+    @FechaPedido DATE, 
+    @Precio DECIMAL(10,2), 
+    @Estado VARCHAR(100)
+AS
+BEGIN
+    UPDATE Pedido
+    SET
+        Nombre_Producto = @Nombre_Producto,
+        Numero_Pedido = @Numero_Pedido,
+        Cantidad = @Cantidad,
+        FechaPedido = @FechaPedido,
+        Precio = @Precio,
+        Estado = @Estado
+    WHERE Id = @Id;
+END
+
+
+/*Delete*/
+CREATE PROCEDURE EliminarPedido
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Pedido 
+	WHERE Id = @Id
+END;
+
+
+/*Procedimiento: MarcarPedidoComoEnCamino*/
+CREATE PROCEDURE MarcarPedidoComoEnCamino
+    @Id INT
+AS
+BEGIN
+    UPDATE Pedido
+    SET Estado = 'En camino'
+    WHERE Id = @Id AND Estado = 'Preparando';
+END
+
+
+/*Procedimiento: MarcarPedidoComoEnviado*/
+CREATE PROCEDURE MarcarPedidoComoEnviado
+    @Id INT
+AS
+BEGIN
+    UPDATE Pedido
+    SET Estado = 'Enviado'
+    WHERE Id = @Id AND Estado = 'En camino';
+END
+
+
+--    Reparaciones
+
+/*Tabla de index mostrar las reparaciones*/
+CREATE PROCEDURE ObtenerReparaciones
+AS
+BEGIN
+    SELECT * FROM Reparacion
+END
+
+DROP TABLE Reparacion;
+
+CREATE PROCEDURE ConsultarReparacionID
+    @IdReparacion INT
+AS
+BEGIN
+    SELECT * FROM Reparacion WHERE IdReparacion = @IdReparacion
+END
+
+
+/*Update*/
+CREATE PROCEDURE ActualizarReparacion
+    @IdReparacion INT,
+    @Fecha_Ingreso DATE,
+    @Fecha_Salida DATE,
+    @Descripcion VARCHAR(255),
+    @Estado VARCHAR(50),
+    @IdCliente VARCHAR(15)
+AS
+BEGIN
+    UPDATE Reparacion
+    SET Fecha_Ingreso = @Fecha_Ingreso,
+        Fecha_Salida = @Fecha_Salida,
+        Descripcion = @Descripcion,
+        Estado = @Estado,
+        IdCliente = @IdCliente
+    WHERE IdReparacion = @IdReparacion
+END
+
+
+/*Delete*/
+CREATE PROCEDURE EliminarReparacion
+    @IdReparacion INT
+AS
+BEGIN
+    DELETE FROM Reparacion 
+	WHERE IdReparacion = @IdReparacion
+END;
+
+CREATE PROCEDURE CrearReparacion
+    @Fecha_Ingreso DATE,
+    @Fecha_Salida DATE,
+    @Descripcion VARCHAR(255),
+    @Estado VARCHAR(50),
+    @IdCliente VARCHAR(15)
+AS
+BEGIN
+    INSERT INTO Reparacion (Fecha_Ingreso, Fecha_Salida, Descripcion, Estado, IdCliente)
+    VALUES (@Fecha_Ingreso, @Fecha_Salida, @Descripcion, @Estado, @IdCliente)
+END
+
+ 
+ 
+--  Ventas
+
 -- Crear una venta
 CREATE OR ALTER PROCEDURE CrearVenta
     @Fecha DATETIME,
@@ -678,19 +957,19 @@ AS
 BEGIN
     INSERT INTO Venta (Fecha, NotaCreditoId)
     VALUES (@Fecha, @NotaCreditoId);
-
+ 
     SELECT SCOPE_IDENTITY() AS NuevaVentaId;
 END
 GO
-
+ 
 CREATE OR ALTER PROCEDURE ObtenerVentas
 AS
 BEGIN
     SELECT * FROM Venta;
 END
 GO
-
-
+ 
+ 
 -- Consultar venta por ID
 CREATE OR ALTER PROCEDURE ConsultarVentaPorId
     @Id INT
@@ -699,7 +978,6 @@ BEGIN
     SELECT * FROM Venta WHERE Id = @Id;
 END
 GO
-
 
 -- Actualizar venta
 CREATE OR ALTER PROCEDURE ActualizarVenta
@@ -714,8 +992,7 @@ BEGIN
     WHERE Id = @Id;
 END
 GO
-
-
+ 
 -- Eliminar venta
 CREATE OR ALTER PROCEDURE EliminarVenta
     @Id INT
@@ -724,6 +1001,9 @@ BEGIN
     DELETE FROM Venta WHERE Id = @Id;
 END
 GO
+ 
+
+ --  Finanzas
 
 -- Crear movimiento financiero
 CREATE OR ALTER PROCEDURE CrearMovimientoFinanciero
@@ -738,12 +1018,12 @@ AS
 BEGIN
     INSERT INTO Finanza (Fecha, Descripcion, Monto, Tipo, FechaVencimiento, Pagada, Anulada)
     VALUES (@Fecha, @Descripcion, @Monto, @Tipo, @FechaVencimiento, @Pagada, @Anulada);
-
+ 
     SELECT SCOPE_IDENTITY() AS NuevoMovimientoId;
 END
 GO
-
-
+ 
+ 
 -- Obtener movimientos financieros no anulados
 CREATE OR ALTER PROCEDURE ObtenerMovimientosFinancieros
 AS
@@ -752,8 +1032,8 @@ BEGIN
     WHERE Anulada = 0;
 END
 GO
-
-
+ 
+ 
 -- Actualizar movimiento financiero existente
 CREATE OR ALTER PROCEDURE ActualizarMovimientoFinanciero
     @Id INT,
@@ -778,7 +1058,6 @@ BEGIN
 END
 GO
 
-
 -- Marcar cuenta por cobrar como pagada (y cambiar tipo a ingreso)
 CREATE OR ALTER PROCEDURE MarcarCuentaPorCobrarComoPagada
     @Id INT
@@ -790,8 +1069,7 @@ BEGIN
     WHERE Id = @Id AND Tipo = 'CUENTA_POR_COBRAR';
 END
 GO
-
-
+ 
 -- Eliminar movimiento financiero (eliminación real)
 CREATE OR ALTER PROCEDURE EliminarMovimientoFinanciero
     @Id INT
@@ -800,33 +1078,21 @@ BEGIN
     DELETE FROM Finanza WHERE Id = @Id;
 END
 GO
-
-
-USE master;
-GO
-
-CREATE TABLE Producto (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Nombre_Producto NVARCHAR(100) NOT NULL,
-    Categoria NVARCHAR(100) NOT NULL,
-    Cantidad INT NOT NULL CHECK (Cantidad >= 0),
-    Proveedor NVARCHAR(100) NOT NULL,
-    Precio DECIMAL(10, 2) NOT NULL CHECK (Precio > 0)
-);
-
+ 
+-- Carrito
 
 -- Procedimiento para agregar al carrito
 CREATE OR ALTER PROCEDURE AgregarAlCarrito
     @ProductoId INT,
     @Cantidad INT,
-    @Nombre_Producto NVARCHAR(100),  
+    @Nombre_Producto NVARCHAR(100), 
     @Precio DECIMAL(18, 2)
 AS
 BEGIN
     INSERT INTO Carrito (ProductoId, Cantidad, Nombre_Producto, Precio)
     VALUES (@ProductoId, @Cantidad, @Nombre_Producto, @Precio)
 END
-
+ 
 -- Procedimiento para obtener carrito
 CREATE OR ALTER PROCEDURE ObtenerCarrito
 AS
@@ -840,7 +1106,7 @@ BEGIN
         (Precio * Cantidad) AS Subtotal
     FROM Carrito
 END
-
+ 
 -- Procedimiento para eliminar un producto del carrito
 CREATE OR ALTER PROCEDURE EliminarDelCarrito
     @Id INT
@@ -848,14 +1114,14 @@ AS
 BEGIN
     DELETE FROM Carrito WHERE Id = @Id
 END
-
+ 
 -- Procedimiento para vaciar el carrito
 CREATE OR ALTER PROCEDURE LimpiarCarrito
 AS
 BEGIN
     DELETE FROM Carrito
 END
-
+ 
 -- Procedimiento para actualizar la cantidad
 CREATE OR ALTER PROCEDURE ActualizarCantidadCarrito
     @Id INT,
@@ -867,8 +1133,226 @@ BEGIN
     WHERE Id = @Id
 END
 
-INSERT INTO Carrito (ProductoId, Cantidad, Nombre_Producto, Precio)
-VALUES 
-(1, 2, 'Martillo de acero', 8.50),
-(2, 1, 'Taladro eléctrico', 59.99);
->>>>>>> Stashed changes
+--  Inventario
+
+--Crear un producto 
+CREATE OR ALTER PROCEDURE CrearProducto
+    @Nombre       VARCHAR(100),
+    @Descripcion  VARCHAR(255),
+    @Cantidad     INT,
+    @Precio       DECIMAL(10, 2),
+    @IdProveedor  INT,
+    @IdCategoria  INT
+AS
+BEGIN
+    INSERT INTO INVENTARIO (Nombre, Descripcion, Cantidad, Precio, IdProveedor, IdCategoria)
+    VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria);
+END
+
+
+--Listar productos
+CREATE OR ALTER PROCEDURE ObtenerProductos
+AS
+BEGIN
+    SELECT 
+        I.IdProducto,
+        I.Nombre,
+        I.Descripcion,
+        I.Cantidad,
+        I.Precio,
+        I.IdProveedor,
+        P.NombreEmpresa   AS NombreProveedor,
+        I.IdCategoria,
+        C.Nombre          AS NombreCategoria
+    FROM 
+        INVENTARIO I
+    INNER JOIN 
+        PROVEEDOR P   ON I.IdProveedor  = P.IDProveedor
+    INNER JOIN 
+        Categoria C   ON I.IdCategoria  = C.IdCategoria;
+END;
+GO
+
+
+--Actualizar/editar prdcto
+CREATE OR ALTER PROCEDURE ActualizarProducto
+    @IdProducto   INT,
+    @Nombre       VARCHAR(100),
+    @Descripcion  VARCHAR(255),
+    @Cantidad     INT,
+    @Precio       DECIMAL(10,2),
+    @IdProveedor  INT,
+    @IdCategoria  INT
+AS
+BEGIN
+    UPDATE INVENTARIO
+    SET 
+        Nombre      = @Nombre,
+        Descripcion = @Descripcion,
+        Cantidad    = @Cantidad,
+        Precio      = @Precio,
+        IdProveedor = @IdProveedor,
+        IdCategoria = @IdCategoria
+    WHERE IdProducto = @IdProducto;
+END;
+GO
+
+
+
+--Eliminar el producto del inventario
+CREATE OR ALTER PROCEDURE EliminarProducto
+    @IdProducto INT
+AS
+BEGIN
+    DELETE FROM INVENTARIO
+    WHERE IdProducto = @IdProducto
+END;
+
+
+--  Categoria
+
+CREATE OR ALTER PROCEDURE CrearCategoria
+    @Nombre VARCHAR(100),
+    @Descripcion VARCHAR(255)
+AS
+BEGIN
+    INSERT INTO Categoria (Nombre, Descripcion)
+    VALUES (@Nombre, @Descripcion);
+END;
+
+
+CREATE OR ALTER PROCEDURE ObtenerCategorias
+AS
+BEGIN
+    SELECT * FROM Categoria;
+END;
+
+CREATE OR ALTER PROCEDURE ConsultarCategoriaID
+    @IdCategoria INT
+AS
+BEGIN
+    SELECT * FROM Categoria WHERE IdCategoria = @IdCategoria;
+END;
+
+CREATE OR ALTER PROCEDURE ActualizarCategoria
+    @IdCategoria INT,
+    @Nombre VARCHAR(100),
+    @Descripcion VARCHAR(255)
+AS
+BEGIN
+    UPDATE Categoria
+    SET Nombre = @Nombre,
+        Descripcion = @Descripcion
+    WHERE IdCategoria = @IdCategoria;
+END;
+
+CREATE OR ALTER PROCEDURE EliminarCategoria
+    @IdCategoria INT
+AS
+BEGIN
+    DELETE FROM Categoria WHERE IdCategoria = @IdCategoria;
+END;
+
+--  PROVEEDOR
+
+--CREAR
+CREATE PROCEDURE CrearProveedor
+    @NombreEmpresa NVARCHAR(100),
+    @Correo NVARCHAR(100),
+    @Telefono NVARCHAR(20),
+    @Estado NVARCHAR(20)
+AS
+BEGIN
+    INSERT INTO Proveedor (NombreEmpresa, Correo, Telefono, Estado)
+    VALUES (@NombreEmpresa, @Correo, @Telefono, @Estado)
+END;
+
+
+--MOSTRAR LA LISTA DE PROVEEDORES EN LA VISTA
+CREATE PROCEDURE ObtenerProveedores
+AS
+BEGIN
+    SELECT * FROM Proveedor
+END;
+
+CREATE OR ALTER PROCEDURE ObtenerProveedorPorId
+    @IDProveedor INT
+AS
+BEGIN
+    SELECT *
+    FROM Proveedor
+    WHERE IDProveedor = @IDProveedor;
+END;
+
+CREATE OR ALTER PROCEDURE ActualizarProveedor
+    @IDProveedor INT,
+    @NombreEmpresa NVARCHAR(100),
+    @Correo NVARCHAR(100),
+    @Telefono NVARCHAR(20),
+    @Estado NVARCHAR(20)
+AS
+BEGIN
+    UPDATE Proveedor
+    SET 
+        NombreEmpresa = @NombreEmpresa,
+        Correo = @Correo,
+        Telefono = @Telefono,
+        Estado = @Estado
+    WHERE IDProveedor = @IDProveedor;
+END;
+
+CREATE OR ALTER PROCEDURE EliminarProveedor
+    @IDProveedor INT
+AS
+BEGIN
+    DELETE FROM Proveedor
+    WHERE IDProveedor = @IDProveedor;
+END;
+
+select * from cliente
+
+--Productos destacados
+
+CREATE PROCEDURE ObtenerProductosDestacados
+AS
+BEGIN
+    SELECT TOP 4 
+        p.IdProducto,
+        p.Nombre,
+        p.Descripcion,
+        p.Precio,
+        p.ImagenUrl,
+        c.Nombre AS NombreCategoria,
+        pr.NombreEmpresa AS NombreProveedor
+    FROM 
+        Productos p
+    INNER JOIN 
+        Categorias c ON p.IdCategoria = c.IdCategoria
+    INNER JOIN
+        Proveedores pr ON p.IdProveedor = pr.IDProveedor
+    WHERE 
+        p.EnCatalogo = 1
+    ORDER BY 
+        p.FechaCreacion DESC
+END
+
+
+CREATE  PROCEDURE ObtenerProductosCatalogo
+AS
+BEGIN
+    SELECT TOP 4 -- Si quieres solo 4 para Home
+        I.IdProducto,
+        I.Nombre,
+        I.Descripcion,
+        I.Cantidad,
+        I.Precio,
+        I.IdProveedor,
+        P.NombreEmpresa AS NombreProveedor,
+        I.IdCategoria,
+        C.Nombre AS CategoriaNombre
+    FROM INVENTARIO I
+    INNER JOIN PROVEEDOR P ON I.IdProveedor = P.IDProveedor
+    INNER JOIN CATEGORIA C ON I.IdCategoria = C.IdCategoria
+    ORDER BY I.IdProducto DESC; -- Los más recientes primero
+END
+GO

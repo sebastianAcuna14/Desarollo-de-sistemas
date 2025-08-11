@@ -27,8 +27,8 @@ namespace prototipo2.Controllers
             {
                 using var con = Conexion();
                 var productosDestacados = con.Query<Producto>(
-                    "SELECT TOP 4 * FROM Productos WHERE EnCatalogo = 1 ORDER BY IdProducto DESC",
-                    commandType: CommandType.Text
+                    "ObtenerProductosCatalogo",
+                    commandType: CommandType.StoredProcedure
                 ).ToList();
 
                 return View(productosDestacados);

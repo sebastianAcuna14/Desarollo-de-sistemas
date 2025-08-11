@@ -63,7 +63,7 @@ namespace prototipo2.Controllers
 
 
 
-            public IActionResult Catalogo()
+        public IActionResult Catalogo()
         {
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
