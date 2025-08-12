@@ -1356,3 +1356,24 @@ BEGIN
     ORDER BY I.IdProducto DESC; -- Los más recientes primero
 END
 GO
+
+
+CREATE OR ALTER PROCEDURE FiltrarProductos
+    @CategoriaId INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        IdProducto,
+        Nombre,
+        Descripcion,
+        Cantidad,
+        Precio,
+        IdCategoria,
+        IdProveedor
+    FROM INVENTARIO
+    WHERE (@CategoriaId IS NULL OR IdCategoria = @CategoriaId);
+END
+GO
+

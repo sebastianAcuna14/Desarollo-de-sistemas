@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oZHMGmegPZvRbbKBvsmhY2dYgS3AOGkLXOJiMjqjNFU=",
+  "Hash": "HRD8zLAclV0B4D2QQ80V+sWFdO5yzuK72JZYdCPKepQ=",
   "Source": "prototipo2",
   "BasePath": "_content/prototipo2",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "b06m6xsnk7",
-      "Integrity": "Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=",
+      "Fingerprint": "5a8yr9xuk7",
+      "Integrity": "ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\bundle\\prototipo2.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "b06m6xsnk7",
-      "Integrity": "Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=",
+      "Fingerprint": "5a8yr9xuk7",
+      "Integrity": "ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\prototipo2.bundle.scp.css"
@@ -1969,7 +1969,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 08:29:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2014,7 +2014,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 08:29:11 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8507,7 +8507,7 @@
       ]
     },
     {
-      "Route": "prototipo2.b06m6xsnk7.bundle.scp.css",
+      "Route": "prototipo2.5a8yr9xuk7.bundle.scp.css",
       "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\prototipo2.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -8517,7 +8517,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3394"
+          "Value": "4530"
         },
         {
           "Name": "Content-Type",
@@ -8525,11 +8525,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
+          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 10:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8539,7 +8539,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b06m6xsnk7"
+          "Value": "5a8yr9xuk7"
         },
         {
           "Name": "label",
@@ -8547,12 +8547,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
+          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
         }
       ]
     },
     {
-      "Route": "prototipo2.b06m6xsnk7.styles.css",
+      "Route": "prototipo2.5a8yr9xuk7.styles.css",
       "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\bundle\\prototipo2.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -8562,7 +8562,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3394"
+          "Value": "4530"
         },
         {
           "Name": "Content-Type",
@@ -8570,11 +8570,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
+          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 10:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8584,7 +8584,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "b06m6xsnk7"
+          "Value": "5a8yr9xuk7"
         },
         {
           "Name": "label",
@@ -8592,7 +8592,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
+          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
         }
       ]
     },
@@ -8607,7 +8607,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3394"
+          "Value": "4530"
         },
         {
           "Name": "Content-Type",
@@ -8615,11 +8615,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
+          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 10:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8629,7 +8629,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
+          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
         }
       ]
     },
@@ -8644,7 +8644,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3394"
+          "Value": "4530"
         },
         {
           "Name": "Content-Type",
@@ -8652,11 +8652,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
+          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 11 Aug 2025 05:45:57 GMT"
+          "Value": "Tue, 12 Aug 2025 10:13:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8666,7 +8666,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
+          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
         }
       ]
     }

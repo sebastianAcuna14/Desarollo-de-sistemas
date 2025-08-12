@@ -15,50 +15,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - prototipo2</title>
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-<link rel="stylesheet" href="~/prototipo2.styles.css" asp-append-version="true" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
-<link href="~/css/Styles.css" rel="stylesheet" />
-<link href="~/css/estilo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/prototipo2.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/Styles.css" rel="stylesheet" />
+    <link href="~/css/estilo.css" rel="stylesheet" />
 
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
-       
-            <div class="container">
+    <header style="background-color: #f5dd03; color: black;" class="py-3">
+        <style>
+            header i,
+            header svg {
+                color: black !important;
+                fill: black !important;
+            }
 
+            header a {
+                color: black !important;
+            }
+
+                header a:hover {
+                    color: #333 !important;
+                }
+        </style>
+
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 mb-3 mb-lg-0 text-center text-lg-start">
-                    <a class="text-white text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
-                   
-                        
-                        <h1 class="h3 mb-0 text-white d-flex align-items-center justify-content-center justify-content-lg-start">
-                            <i class="fas fa-cogs me-2 text-warning"></i>
+                    <a class="text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">
+                        <h1 class="h3 mb-0 d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <i class="fas fa-cogs me-2"></i>
                             <span>ElectroMecánica</span>
-
                         </h1>
                     </a>
-                 
                 </div>
                 <div class="col-lg-5 mb-3 mb-lg-0 d-flex align-items-center justify-content-end gap-4">
-                    <!-- Barra de búsqueda -->
-                    <form class="flex-grow-1 me-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar productos...">
-                            <button class="btn btn-warning" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-
                     <div class="position-absolute top-0 end-0 mt-3 me-5 d-flex align-items-center gap-3">
-
-                        <a class="text-white" asp-area="" asp-controller="Carrito" asp-action="Index">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-
-                        <a href="#" class="text-white dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a asp-area="" asp-controller="Carrito" asp-action="Index">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <a href="#" class="dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-user"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -67,22 +65,16 @@
                             <li><a class="dropdown-item" asp-controller="Cliente" asp-action="CerrarSesion">Cerrar Sesión</a></li>
                         </ul>
                     </div>
-
-
-                    
-                
-               
-
+                </div>
             </div>
-            </div>
-            </div>
-       
+        </div>
     </header>
+
     @RenderBody()
 
-@*     <div class="container">
+    @*     <div class="container">
         <main role="main" class="pb-3">
-           
+
         </main>
     </div> *@
 
@@ -114,7 +106,7 @@
                 <!-- Ubícanos -->
                 <div class="col-lg-4 col-md-12 text-center text-md-start">
                     <h5 class="mb-3">Ubícanos</h5>
-                   
+
                     <p class="text-white-50 mb-0">
                         <i class="fa-solid fa-city me-2"></i>
                         San José, Costa Rica
@@ -136,6 +128,6 @@
     </footer>
 
 
-   
+
 </body>
 </html>

@@ -80,6 +80,9 @@ CREATE TABLE INVENTARIO (
   FOREIGN KEY (IdCategoria) REFERENCES Categoria(IdCategoria)
 );
 GO
+ALTER TABLE INVENTARIO
+ADD EnCatalogo BIT NOT NULL DEFAULT 1;
+
 -- Tabla de Reparacion
 CREATE TABLE Reparacion (
     IdReparacion INT IDENTITY(1,1) PRIMARY KEY,

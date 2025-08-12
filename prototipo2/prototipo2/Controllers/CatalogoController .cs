@@ -74,6 +74,30 @@ namespace prototipo2.Controllers
         }
 
 
+        [HttpGet("Filtrar")]
+        public IActionResult Filtrar(int categoriaId)
+        {
+            var connectionString = _configuration.GetConnectionString("Connection");
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                var productos = connection.Query<Producto>(
+                    "FiltrarProductos",
+                    new { CategoriaId = categoriaId },
+                    commandType: CommandType.StoredProcedure
+                ).ToList();
+
+                var categorias = connection.Query<Categoria>("SELECT * FROM Categoria").ToList();
+                ViewBag.Categorias = categorias;  // <<---- Aquí cargas las categorías
+
+                return View(productos);
+            }
+        }
+
+
+
+
+
 
     }
 }
