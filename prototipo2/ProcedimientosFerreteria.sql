@@ -1311,6 +1311,8 @@ END;
 
 select * from cliente
 
+
+--NEWWW
 --Productos destacados
 
 CREATE PROCEDURE ObtenerProductosDestacados
@@ -1376,4 +1378,65 @@ BEGIN
     WHERE (@CategoriaId IS NULL OR IdCategoria = @CategoriaId);
 END
 GO
+--MISMA TPROCEDIMIENTO PERO CON IMAGEN AGREGADA 
+ALTER PROCEDURE ActualizarProducto
+    @IdProducto INT,
+    @Nombre NVARCHAR(100),
+    @Descripcion NVARCHAR(255),
+    @Cantidad INT,
+    @Precio DECIMAL(18,2),
+    @IdProveedor INT,
+    @IdCategoria INT,
+    @ImagenUrl NVARCHAR(500) -- NUEVO
+AS
+BEGIN
+    UPDATE INVENTARIO
+    SET Nombre = @Nombre,
+        Descripcion = @Descripcion,
+        Cantidad = @Cantidad,
+        Precio = @Precio,
+        IdProveedor = @IdProveedor,
+        IdCategoria = @IdCategoria,
+        ImagenUrl = @ImagenUrl -- NUEVO
+    WHERE IdProducto = @IdProducto;
+END
+
+--MISMA TPROCEDIMIENTO PERO CON IMAGEN AGREGADA 
+--Listar productos
+CREATE OR ALTER PROCEDURE ObtenerProductos
+AS
+BEGIN
+    SELECT 
+        I.IdProducto,
+        I.Nombre,
+        I.Descripcion,
+        I.Cantidad,
+        I.Precio,
+        I.IdProveedor,
+        P.NombreEmpresa   AS NombreProveedor,
+        I.IdCategoria,
+        C.Nombre          AS NombreCategoria,
+        I.ImagenUrl       -- ✅ agregado
+    FROM 
+        INVENTARIO I
+    INNER JOIN 
+        PROVEEDOR P   ON I.IdProveedor  = P.IDProveedor
+    INNER JOIN 
+        Categoria C   ON I.IdCategoria  = C.IdCategoria;
+END;
+GO
+--MISMA TPROCEDIMIENTO PERO CON IMAGEN AGREGADA 
+CREATE OR ALTER PROCEDURE CrearProducto
+    @Nombre       VARCHAR(100),
+    @Descripcion  VARCHAR(255),
+    @Cantidad     INT,
+    @Precio       DECIMAL(10, 2),
+    @IdProveedor  INT,
+    @IdCategoria  INT,
+    @ImagenUrl    NVARCHAR(500) -- ✅ agregado
+AS
+BEGIN
+    INSERT INTO INVENTARIO (Nombre, Descripcion, Cantidad, Precio, IdProveedor, IdCategoria, ImagenUrl)
+    VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria, @ImagenUrl);
+END
 

@@ -2,12 +2,17 @@ wwwroot\css\Estilo.css
 wwwroot\css\site.css
 wwwroot\css\Styles.css
 wwwroot\favicon.ico
+wwwroot\imagenes\01d5c93f-9492-443d-b9c8-488b2408f7a3.jpg
+wwwroot\imagenes\3015b5c7-afe0-4c9d-a8dc-766221a7c817.webp
+wwwroot\imagenes\c2ba2996-efc3-40b9-9354-53bab94b22df.webp
+wwwroot\imagenes\f60fbf4d-2e39-4530-a9e6-7e5786f6a901.jpg
 wwwroot\images\2.jpg
 wwwroot\images\4.jpg
 wwwroot\images\5 (1).jpg
 wwwroot\images\5.jpg
 wwwroot\images\6 (1).jpg
 wwwroot\images\6.jpg
+wwwroot\images\cuter.jpg
 wwwroot\images\logo_light.png
 wwwroot\js\Categoria.js
 wwwroot\js\datatables-simple-demo.js

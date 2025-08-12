@@ -6,6 +6,7 @@ using prototipo2.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace prototipo2.Controllers
 {
@@ -54,7 +55,7 @@ namespace prototipo2.Controllers
         // POST: Crear
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Crear(Producto producto)
+        public IActionResult Crear(Producto producto, IFormFile Imagen)
         {
             using var con = Conexion();
 
@@ -75,6 +76,23 @@ namespace prototipo2.Controllers
                 return View(producto);
             }
 
+            if (Imagen != null && Imagen.Length > 0)
+            {
+                var carpetaDestino = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagenes");
+                if (!Directory.Exists(carpetaDestino))
+                    Directory.CreateDirectory(carpetaDestino);
+
+                var nombreArchivo = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                var rutaArchivo = Path.Combine(carpetaDestino, nombreArchivo);
+
+                using (var stream = new FileStream(rutaArchivo, FileMode.Create))
+                {
+                    Imagen.CopyTo(stream);
+                }
+
+                producto.ImagenUrl = "imagenes/" + nombreArchivo;
+            }
+
             con.Execute(
                 "CrearProducto",
                 new
@@ -84,7 +102,8 @@ namespace prototipo2.Controllers
                     producto.Cantidad,
                     producto.Precio,
                     producto.IdProveedor,
-                    producto.IdCategoria
+                    producto.IdCategoria,
+                    producto.ImagenUrl
                 },
                 commandType: CommandType.StoredProcedure
             );
@@ -124,7 +143,7 @@ namespace prototipo2.Controllers
         // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Editar(Producto producto)
+        public IActionResult Editar(Producto producto,IFormFile Imagen)
         {
             using var con = Conexion();
 
@@ -144,6 +163,23 @@ namespace prototipo2.Controllers
 
                 return View(producto);
             }
+            // 📌 Guardar nueva imagen si el usuario subió una
+            if (Imagen != null && Imagen.Length > 0)
+            {
+                var carpetaDestino = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagenes");
+                if (!Directory.Exists(carpetaDestino))
+                    Directory.CreateDirectory(carpetaDestino);
+
+                var nombreArchivo = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                var rutaArchivo = Path.Combine(carpetaDestino, nombreArchivo);
+
+                using (var stream = new FileStream(rutaArchivo, FileMode.Create))
+                {
+                    Imagen.CopyTo(stream);
+                }
+
+                producto.ImagenUrl = "imagenes/" + nombreArchivo;
+            }
 
             con.Execute(
                 "ActualizarProducto",
@@ -155,7 +191,8 @@ namespace prototipo2.Controllers
                     producto.Cantidad,
                     producto.Precio,
                     producto.IdProveedor,
-                    producto.IdCategoria
+                    producto.IdCategoria,
+                    producto.ImagenUrl
                 },
                 commandType: CommandType.StoredProcedure
             );

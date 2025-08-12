@@ -30,5 +30,8 @@ namespace prototipo2.Models
         public bool? EnCatalogo { get; set; } = true;
 
         public bool EsDestacado { get; set; }
+
+        public string? ImagenUrl { get; set; }
+
     }
 }

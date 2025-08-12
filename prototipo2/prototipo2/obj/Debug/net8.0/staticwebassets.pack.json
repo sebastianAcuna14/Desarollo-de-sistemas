@@ -21,6 +21,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\imagenes\\01d5c93f-9492-443d-b9c8-488b2408f7a3.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\01d5c93f-9492-443d-b9c8-488b2408f7a3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\imagenes\\3015b5c7-afe0-4c9d-a8dc-766221a7c817.webp",
+      "PackagePath": "staticwebassets\\imagenes\\3015b5c7-afe0-4c9d-a8dc-766221a7c817.webp"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\imagenes\\c2ba2996-efc3-40b9-9354-53bab94b22df.webp",
+      "PackagePath": "staticwebassets\\imagenes\\c2ba2996-efc3-40b9-9354-53bab94b22df.webp"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\imagenes\\f60fbf4d-2e39-4530-a9e6-7e5786f6a901.jpg",
+      "PackagePath": "staticwebassets\\imagenes\\f60fbf4d-2e39-4530-a9e6-7e5786f6a901.jpg"
+    },
+    {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\images\\2.jpg",
       "PackagePath": "staticwebassets\\images\\2.jpg"
     },
@@ -43,6 +59,10 @@
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\images\\6.jpg",
       "PackagePath": "staticwebassets\\images\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\images\\cuter.jpg",
+      "PackagePath": "staticwebassets\\images\\cuter.jpg"
     },
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\images\\logo_light.png",
