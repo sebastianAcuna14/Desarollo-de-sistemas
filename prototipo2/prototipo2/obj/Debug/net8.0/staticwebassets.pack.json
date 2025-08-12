@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\prototipo2.bundle.scp.css",
-      "PackagePath": "staticwebassets\\prototipo2.5a8yr9xuk7.bundle.scp.css"
+      "PackagePath": "staticwebassets\\prototipo2.b06m6xsnk7.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\css\\Estilo.css",
@@ -67,6 +67,10 @@
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\images\\logo_light.png",
       "PackagePath": "staticwebassets\\images\\logo_light.png"
+    },
+    {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Catalogo.js",
+      "PackagePath": "staticwebassets\\js\\Catalogo.js"
     },
     {
       "Id": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Categoria.js",

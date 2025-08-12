@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XUjXsCEWpuwier6uyO1BUp0AvWe1h1qyBEDCMXv+oo8=",
+  "Hash": "tmprLiELrLiQaxkKd4tFETyyK/XF6faVFPRjMtcmk9Y=",
   "Source": "prototipo2",
   "BasePath": "_content/prototipo2",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "5a8yr9xuk7",
-      "Integrity": "ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=",
+      "Fingerprint": "b06m6xsnk7",
+      "Integrity": "Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\bundle\\prototipo2.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "5a8yr9xuk7",
-      "Integrity": "ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=",
+      "Fingerprint": "b06m6xsnk7",
+      "Integrity": "Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\prototipo2.bundle.scp.css"
@@ -393,6 +393,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo_light.png"
+    },
+    {
+      "Identity": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Catalogo.js",
+      "SourceId": "prototipo2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\",
+      "BasePath": "_content/prototipo2",
+      "RelativePath": "js/Catalogo#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bc6i931tkz",
+      "Integrity": "ZSqw6+uvL52pDI5AY9YDsC8syFe7sXXWZZlUTknGmkk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Catalogo.js"
     },
     {
       "Identity": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Categoria.js",
@@ -3196,6 +3217,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-WhBjrz2CA+NvU3HU54fpuDxBeJxEohRJ03LaJacrmKQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/Catalogo.bc6i931tkz.js",
+      "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Catalogo.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "547"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZSqw6+uvL52pDI5AY9YDsC8syFe7sXXWZZlUTknGmkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Aug 2025 23:24:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bc6i931tkz"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Catalogo.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZSqw6+uvL52pDI5AY9YDsC8syFe7sXXWZZlUTknGmkk="
+        }
+      ]
+    },
+    {
+      "Route": "js/Catalogo.js",
+      "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Catalogo.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "547"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZSqw6+uvL52pDI5AY9YDsC8syFe7sXXWZZlUTknGmkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Aug 2025 23:24:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZSqw6+uvL52pDI5AY9YDsC8syFe7sXXWZZlUTknGmkk="
         }
       ]
     },
@@ -9022,7 +9125,7 @@
       ]
     },
     {
-      "Route": "prototipo2.5a8yr9xuk7.bundle.scp.css",
+      "Route": "prototipo2.b06m6xsnk7.bundle.scp.css",
       "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\prototipo2.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -9032,7 +9135,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4530"
+          "Value": "3394"
         },
         {
           "Name": "Content-Type",
@@ -9040,11 +9143,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
+          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 12 Aug 2025 20:53:53 GMT"
+          "Value": "Tue, 12 Aug 2025 23:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9054,7 +9157,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5a8yr9xuk7"
+          "Value": "b06m6xsnk7"
         },
         {
           "Name": "label",
@@ -9062,12 +9165,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
+          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
         }
       ]
     },
     {
-      "Route": "prototipo2.5a8yr9xuk7.styles.css",
+      "Route": "prototipo2.b06m6xsnk7.styles.css",
       "AssetFile": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\obj\\Debug\\net8.0\\scopedcss\\bundle\\prototipo2.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -9077,7 +9180,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4530"
+          "Value": "3394"
         },
         {
           "Name": "Content-Type",
@@ -9085,11 +9188,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
+          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 12 Aug 2025 20:53:53 GMT"
+          "Value": "Tue, 12 Aug 2025 23:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9099,7 +9202,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5a8yr9xuk7"
+          "Value": "b06m6xsnk7"
         },
         {
           "Name": "label",
@@ -9107,7 +9210,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
+          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
         }
       ]
     },
@@ -9122,7 +9225,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4530"
+          "Value": "3394"
         },
         {
           "Name": "Content-Type",
@@ -9130,11 +9233,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
+          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 12 Aug 2025 20:53:53 GMT"
+          "Value": "Tue, 12 Aug 2025 23:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9144,7 +9247,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
+          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
         }
       ]
     },
@@ -9159,7 +9262,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4530"
+          "Value": "3394"
         },
         {
           "Name": "Content-Type",
@@ -9167,11 +9270,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE=\""
+          "Value": "\"Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 12 Aug 2025 20:53:53 GMT"
+          "Value": "Tue, 12 Aug 2025 23:40:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9181,7 +9284,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ba04D+iOp0FvL7TCjl5DfzfHYRickh0Z4m9R1QKu8nE="
+          "Value": "sha256-Fc5JZ/cxZKPbHdOlB5INTGbtkrfOtfmylUaNabF91YE="
         }
       ]
     }

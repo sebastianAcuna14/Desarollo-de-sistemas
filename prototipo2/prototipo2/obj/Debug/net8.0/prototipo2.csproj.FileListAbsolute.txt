@@ -1417,4 +1417,3 @@ C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\proto
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\bin\Debug\net8.0\RBush.dll
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\bin\Debug\net8.0\System.IO.Packaging.dll
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutCatalogo.cshtml.rz.scp.css

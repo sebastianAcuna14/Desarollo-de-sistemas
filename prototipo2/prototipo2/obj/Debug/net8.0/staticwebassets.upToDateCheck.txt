@@ -14,6 +14,7 @@ wwwroot\images\6 (1).jpg
 wwwroot\images\6.jpg
 wwwroot\images\cuter.jpg
 wwwroot\images\logo_light.png
+wwwroot\js\Catalogo.js
 wwwroot\js\Categoria.js
 wwwroot\js\datatables-simple-demo.js
 wwwroot\js\Empleado.js
