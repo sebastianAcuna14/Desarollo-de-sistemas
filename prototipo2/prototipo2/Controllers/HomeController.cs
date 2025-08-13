@@ -5,6 +5,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using prototipo2.Servicios;
 
 namespace prototipo2.Controllers
 {
@@ -18,9 +19,13 @@ namespace prototipo2.Controllers
             _logger = logger;
             _configuration = configuration;
         }
+        private SqlConnection Conexion()
+        {
+            return new SqlConnection(_configuration.GetConnectionString("Connection"));
+        }
 
-        private SqlConnection Conexion() => new SqlConnection(_configuration.GetConnectionString("Connection"));
 
+        [Sesiones]
         public IActionResult Index()
         {
             try

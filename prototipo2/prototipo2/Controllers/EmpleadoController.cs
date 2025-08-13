@@ -1,26 +1,32 @@
 ﻿using Dapper;
+using DocumentFormat.OpenXml.InkML;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using prototipo2.Models; 
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using prototipo2.Models;
+using prototipo2.Servicios;
 using System.Linq;
 namespace prototipo2.Controllers
 {
     public class EmpleadoController : Controller
     {
         private readonly IConfiguration _configuration;
-        public EmpleadoController(IConfiguration configuration)
+        private readonly IUtilitarios _utilitarios;
+        public EmpleadoController(IConfiguration configuration, IUtilitarios utilitarios)
         {
             _configuration = configuration;
+            _utilitarios = utilitarios;
 
         }
 
-        // Acción Index que envía la lista a la vista
 
 
+        [Sesiones]
         public IActionResult CrearEmpleado()
         {
             return View();
         }
+        [Sesiones]
         public IActionResult ListaEmpleado()
         {
             using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
@@ -29,15 +35,29 @@ namespace prototipo2.Controllers
                 return View(resultado);
             }
         }
+        [HttpGet]
+        public IActionResult EditarEmpleado(int id)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+            {
+                var resultado = context.QueryFirstOrDefault<Empleado>("ConsultarEmpleadoID",
+                    new
+                    {
+                        IdEmpleado = id
+                    });
 
+                return View(resultado);
+            }
+        }
         [HttpPost]
-        public IActionResult Editar(Empleado empleado)
+        public IActionResult EditarEmpleado(Empleado empleado)
         {
             using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
             {
                 var resultado = context.Execute("EditarEmpleado",
                 new
                 {
+                    empleado.IdEmpleado,
                     empleado.Nombre,
                     empleado.Apellido,
                     empleado.Cedula,
@@ -48,17 +68,18 @@ namespace prototipo2.Controllers
                 });
 
                 if (resultado > 0)
-                    return RedirectToAction("Index");
+                    return RedirectToAction("ListaEmpleado");
 
                 return View(empleado);
             }
         }
-            [HttpPost]
-          public IActionResult CrearEmpleado(Empleado empleado)
+        [HttpPost]
+        public IActionResult CrearEmpleado(Empleado empleado)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
             {
-                using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
-                {
-                    var resultado = context.Execute("RegistrarEmpleado",
+                var contrasena = _utilitarios.Encrypt(empleado.Contrasena);
+                var resultado = context.Execute("RegistrarEmpleado",
                           new
                           {
                               empleado.Nombre,
@@ -66,77 +87,56 @@ namespace prototipo2.Controllers
                               empleado.Cedula,
                               empleado.Telefono,
                               empleado.Correo,
-                              empleado.Contrasena
-                              //empleado.IdRol
+                              contrasena
+
+
 
                           }
 
                           );
-                    if (resultado > 0)
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
-
-                    return View(empleado);
+                if (resultado > 0)
+                {
+                    return RedirectToAction("ListaEmpleado", "Empleado");
                 }
+
+                return View(empleado);
             }
-
-
-        //[HttpGet]
-        //public IActionResult Eliminar(Empleado empleado)
-        //{
-        //    using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
-        //    {
-        //        var resultado = context.Execute("EliminarEmpleado",
-        //              new
-        //              {
-        //                  empleado.IdEmpleado
-        //              });
-
-        //        if (resultado == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        return View(empleado);
-
-        //    }
-        //}
-      
-            //}
-
-
-
-
-            //[HttpPost]
-            //public IActionResult EditarEmpleado(int id, Empleado empleado)
-            //{
-            //    if (id != empleado.Id) return NotFound();
-
-            //    if (ModelState.IsValid)
-            //    {
-            //        var existente = Empleados.FirstOrDefault(e => e.Id == id);
-            //        if (existente == null) return NotFound();
-
-            //        existente.NombreCompleto = empleado.NombreCompleto;
-            //        existente.Cedula = empleado.Cedula;
-            //        existente.Rol = empleado.Rol;
-            //        existente.Salario = empleado.Salario;
-            //        existente.FechaContratacion = empleado.FechaContratacion;
-
-            //        return RedirectToAction(nameof(ListaEmpleado));
-            //    }
-            //    return View(empleado);
-            //}
-
-
-            //public IActionResult Eliminar(int id)
-            //{
-            //    var empleado = Empleados.FirstOrDefault(e => e.Id == id);
-            //    if (empleado !=null)
-            //    {
-            //        Empleados.Remove(empleado);
-            //    }
-            //    return RedirectToAction(nameof(ListaEmpleado));
-            //}
         }
+
+        [HttpGet]
+        public IActionResult EliminarEmpleado(int id)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+            {
+                var resultado = context.QueryFirstOrDefault<Empleado>("ConsultarEmpleadoID",
+                    new
+                    {
+                        IdEmpleado = id
+                    });
+
+                return View(resultado);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EliminarEmpleado(Empleado empleado)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+            {
+                var resultado = context.Execute("EliminarEmpleado",
+                      new
+                      {
+                          empleado.IdEmpleado
+                      });
+
+
+                return RedirectToAction("ListaEmpleado");
+
+            }
+        }
+
     }
+
+
+}
+

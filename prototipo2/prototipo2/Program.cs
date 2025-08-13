@@ -3,8 +3,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using prototipo2.Servicios;
 using prototipo2.Services;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+// Servicios
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(1);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -14,6 +26,25 @@ builder.Services.AddScoped<IUtilitarios, Utilitarios>();
 builder.Services.AddHttpClient<PayPalService>();
 builder.Services.AddScoped<PayPalService>();
 
+// Configuración JWT
+var key = Encoding.UTF8.GetBytes(builder.Configuration["Start:LlaveSegura"]);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ClockSkew = TimeSpan.Zero // No dar tiempo extra
+    };
+});
 
 var app = builder.Build();
 
