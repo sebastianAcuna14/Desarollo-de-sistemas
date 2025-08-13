@@ -7,7 +7,7 @@ namespace prototipo2.Servicios
 
         string GenerarContrasenna(int longitud);
         string GenerarToken(int id, string tipo);
-      
+        string Decrypt(string texto);
         string Encrypt(string texto);
         void EnviarCorreo(string destinatario, string asunto, string cuerpo);
 

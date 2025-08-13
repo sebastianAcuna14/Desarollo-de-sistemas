@@ -4,6 +4,14 @@ GO
 
 -- Login
 
+
+CREATE or alter PROCEDURE ObtenerCliente
+@idCliente int
+AS
+BEGIN
+    SELECT * FROM Cliente 
+END
+
 CREATE PROCEDURE RegistrarCliente
     @Nombre NVARCHAR(100),
     @Apellido NVARCHAR(100),
@@ -61,7 +69,30 @@ BEGIN
       AND E.Contrasena = @Contrasena
 END
 GO
+CREATE OR ALTER PROCEDURE EditarEmpleado
+	 @IdEmpleado INT,
+    @Nombre   varchar(50),
+    @Apellido varchar(50),
+    @Cedula   varchar(15),
+    @Telefono varchar(20),
+	@Correo	  varchar(100),
+    @Contrasena varchar(50),
+    @IdRol  INT
+AS
+BEGIN
+    UPDATE Empleado
+    SET 
+        Nombre      = @Nombre,
+        Apellido    = @Apellido,
+        Cedula		= @Cedula,
+        Telefono    = @Telefono,
+        Correo		= @Correo,
+        Contrasena  = @Contrasena,
+		IdRol	    = @IdRol
 
+    WHERE IdEmpleado = @IdEmpleado;
+END;
+GO
 
 Create or alter PROCEDURE RegistrarEmpleado
     @Nombre VARCHAR(100),
@@ -73,7 +104,7 @@ Create or alter PROCEDURE RegistrarEmpleado
 	
 AS
 BEGIN
-    INSERT INTO Empleado( Nombre, Apellido,Cedula, Telefono, Correo, Contrasena,IdRol)
+    INSERT INTO Empleado( Nombre, Apellido,Cedula, Telefono, Correo, ,IdRol)
     VALUES (@Nombre,@Apellido, @Cedula, @Telefono, @Correo, @Contrasena,1);
 END;
 

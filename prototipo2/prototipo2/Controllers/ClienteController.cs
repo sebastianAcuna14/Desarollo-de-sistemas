@@ -6,8 +6,15 @@ using prototipo2.Servicios;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using NuGet.Common;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Azure;
+
 namespace prototipo2.Controllers
 {
+
     public class ClienteController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -20,96 +27,101 @@ namespace prototipo2.Controllers
             _utilitarios = utilitarios;
             _environment = environment;
         }
+        [HttpGet]
+        public IActionResult MiPerfil(Cliente cliente)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+            {
+                var resultado = context.QueryFirstOrDefault<Cliente>("ConsultarClienteID",
+                new
+                {
+                    cliente.idCliente
+                });
 
+                if (resultado != null)
+                {
+
+                    return View(resultado);
+                }
+
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult EditarPerfil()
+        {
+            return View();
+        }
+        public IActionResult EditarPerfil(Cliente cliente)
+        {
+            {
+                using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+                {
+                    var resultado = context.Execute("EditarCliente",
+                    new
+                    {
+                        cliente.idCliente,
+                        cliente.Nombre,
+                        cliente.Apellido,
+                        cliente.Telefonos,
+                        cliente.Correo,
+                        cliente.Contrasena,
+
+                    });
+
+                    if (resultado > 0)
+                        return RedirectToAction("ListaEmpleado");
+
+                    return View(cliente);
+                }
+            }
+
+        }
         [HttpGet]
         public IActionResult InicioSesion()
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult CerrarSesion()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("InicioSesion", "Cliente");
-        }
-        [HttpGet]
-        public IActionResult RecuperarAcceso()
-        {
-            return View(); // muestra el formulario vacío
-        }
-
-        [HttpGet]
-        public IActionResult RegistroCliente()
-        {
-            return View();
-        }
-
-
-        [HttpPost]
-        public IActionResult RegistroCliente(Cliente cliente)
-        {
-            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
-            {
-                var resultado = context.Execute("RegistrarCliente",
-                      new
-                      {
-                          cliente.Nombre,
-                          cliente.Apellido,
-                          cliente.Cedula,
-                          cliente.Correo,
-                          cliente.Telefonos,
-                          cliente.Contrasena
-                      }
-
-                      );
-                if (resultado > 0)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-
-
-            }
-            ViewBag.Mesaje = "No se pudo registrar";
-            return View();
-
-        }
-
-
-
         [HttpPost]
         public IActionResult InicioSesion(Cliente cliente, Empleado empleado)
         {
             using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
             {
-                var contrasenaEncriptada = _utilitarios.Encrypt(cliente.Contrasena!);
+                var contrasena = _utilitarios.Encrypt(cliente.Contrasena!);
                 var resultadoCliente = context.QueryFirstOrDefault<Cliente>("ValidarInicioSesion",
                     new
                     {
                         cliente.Correo,
-                        cliente.Contrasena
+                        contrasena
                     });
                 if (resultadoCliente != null)
                 {
                     var token = _utilitarios.GenerarToken(resultadoCliente.idCliente, "cliente");
-                    //HttpContext.Session.SetString("Token", token);
+                    HttpContext.Session.SetString("JWT", token);
                     HttpContext.Session.SetString("NombreUsuario", resultadoCliente.Nombre ?? "Cliente");
                     HttpContext.Session.SetString("Rol", "Cliente");
                     return RedirectToAction("Index", "Home");
                 }
-                var contrasenaEncriptadaEmpleado = _utilitarios.Encrypt(empleado.Contrasena!);
+                var Contrasena = _utilitarios.Encrypt(empleado.Contrasena!);
                 var resultadoEmpleado = context.QueryFirstOrDefault<Empleado>("ValidarInicioSesionEmpleado",
                     new
                     {
                         empleado.Correo,
-                        empleado.Contrasena
+                        Contrasena
                     });
 
                 if (resultadoEmpleado != null)
                 {
-                    resultadoEmpleado.Token = _utilitarios.GenerarToken(resultadoEmpleado.IdEmpleado, "Empleado");
-                    HttpContext.Session.SetString("Rol", resultadoEmpleado.NombreRol); // "Administrador" o "Empleado"
+                    var Token = _utilitarios.GenerarToken(resultadoEmpleado.IdEmpleado, "Empleado");
+                    HttpContext.Session.SetString("JWT", Token);
+                    HttpContext.Session.SetString("Rol", resultadoEmpleado.NombreRol ?? "Empleado"); // "Administrador" o "Empleado"
                     HttpContext.Session.SetString("NombreUsuario", resultadoEmpleado.Nombre ?? "Empleado");
+
                     return RedirectToAction("Admi", "AdminController1");
+                    //HttpContext.Session.SetString("JWT", Token);
+                    //HttpContext.Session.SetString("Rol", resultadoEmpleado.NombreRol);
+                    //HttpContext.Session.SetString("NombreUsuario", resultadoEmpleado.Nombre ?? "Empleado");
+                    //return RedirectToAction("Admi", "AdminController1");
                 }
 
 
@@ -118,9 +130,24 @@ namespace prototipo2.Controllers
             }
 
         }
+        [HttpGet]
+        [Sesiones]
+        public async Task<IActionResult> CerrarSesion()
+        {
+            //await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
+            foreach (var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie);
+            }
+            return RedirectToAction("InicioSesion", "Cliente");
+        }
+        [HttpGet]
+        public IActionResult RecuperarAcceso()
+        {
+            return View();
+        }
         [HttpPost]
-
-        [AllowAnonymous]
         public IActionResult RecuperarAcceso(Cliente cliente)
         {
             using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
@@ -157,6 +184,46 @@ namespace prototipo2.Controllers
                 return View();
             }
         }
+        [HttpGet]
+        public IActionResult RegistroCliente()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult RegistroCliente(Cliente cliente)
+        {
+            using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))
+            {
+
+                var contrasena = _utilitarios.Encrypt(cliente.Contrasena);
+                var resultado = context.Execute("RegistrarCliente",
+                      new
+                      {
+                          cliente.Nombre,
+                          cliente.Apellido,
+                          cliente.Cedula,
+                          cliente.Correo,
+                          cliente.Telefonos,
+                          contrasena
+
+                      }
+
+                      );
+                if (resultado > 0)
+                {
+                    return RedirectToAction("InicioSesion", "Cliente");
+                }
+
+
+            }
+            ViewBag.Mesaje = "No se pudo registrar";
+            return View();
+
+        }
+
+
+
+
 
 
     }
