@@ -11,8 +11,7 @@
 
         <!-- ojo estoos son los botones para crear o exportar -->
         <a asp-controller="Reparacion" asp-action="Crear" class="btn btn-primary mt-3">Agregar Reparación</a>
-       @*  <a asp-action="ExportarExcel" class="btn btn-success mt-3 ms-2">Exportar a Excel</a> *@
-            <i class="fas fa-file-pdf"></i> Exportar a PDF
+    
         </a>
 
         <!-- Tabla de reparaciones -->
@@ -42,7 +41,7 @@
                                 <td>@item.IdCliente</td>
                                 <td>
                                     <a asp-action="Editar" asp-route-id="@item.IdReparacion" class="btn btn-warning btn-sm">Editar</a>
-                                    <a asp-action="Consultar" asp-route-id="@item.IdReparacion" class="btn btn-info btn-sm">Ver</a>
+                                   
                                     <a asp-action="Eliminar" asp-route-id="@item.IdReparacion" class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
                             </tr>

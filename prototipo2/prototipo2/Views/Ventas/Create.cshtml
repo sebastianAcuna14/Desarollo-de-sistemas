@@ -5,58 +5,47 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div class="container mt-4">
-    <div class="card shadow rounded-4">
-        <div class="card-header bg-success text-white rounded-top-4">
-            <h3 class="mb-0">🛒 Nueva Venta</h3>
+<div class="container mt-5 col-md-8">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Registrar Venta</h4>
         </div>
         <div class="card-body">
             <form asp-action="Create" method="post">
-                <p class="text-muted mb-4">Por favor, complete los detalles de la venta a continuación:</p>
-                <div class="table-responsive">
-                    <table class="table table-bordered align-middle text-center">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio Unitario (₡)</th>
-                                <th>Método de Pago</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input name="Productos[0].Producto" class="form-control" placeholder="Nombre del producto" />
-                                    <span asp-validation-for="Productos[0].Producto" class="text-danger small"></span>
-                                </td>
-                                <td>
-                                    <input name="Productos[0].Cantidad" type="number" min="1" class="form-control" placeholder="Ej. 1" />
-                                    <span asp-validation-for="Productos[0].Cantidad" class="text-danger small"></span>
-                                </td>
-                                <td>
-                                    <input name="Productos[0].PrecioUnitario" type="number" step="0.01" min="0" class="form-control" placeholder="Ej. 1500.00" />
-                                    <span asp-validation-for="Productos[0].PrecioUnitario" class="text-danger small"></span>
-                                </td>
-                                <td>
-                                    <select name="Pagos[0].Tipo" class="form-select">
-                                        <option value="EFECTIVO">Efectivo</option>
-                                        <option value="TARJETA">Tarjeta</option>
-                                        <option value="SINPE">SINPE</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div class="mb-3">
+                    <label class="form-label">Producto</label>
+                    <input name="Productos[0].Producto" class="form-control" placeholder="Nombre del producto" />
+                    <span asp-validation-for="Productos[0].Producto" class="text-danger"></span>
                 </div>
 
-                <div class="d-flex justify-content-end mt-4 gap-2">
-                    <button type="submit" class="btn btn-success px-4">
-                        <i class="bi bi-check-circle-fill me-1"></i> Guardar Venta
-                    </button>
-                    <a asp-action="Index" class="btn btn-outline-secondary px-4">
-                        <i class="bi bi-x-circle me-1"></i> Cancelar
-                    </a>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label">Cantidad</label>
+                        <input name="Productos[0].Cantidad" type="number" min="1" class="form-control" placeholder="Ej. 1" />
+                        <span asp-validation-for="Productos[0].Cantidad" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Precio Unitario (₡)</label>
+                        <input name="Productos[0].PrecioUnitario" type="number" step="0.01" min="0" class="form-control" placeholder="Ej. 1500.00" />
+                        <span asp-validation-for="Productos[0].PrecioUnitario" class="text-danger"></span>
+                    </div>
                 </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Método de Pago</label>
+                    <select name="Pagos[0].Tipo" class="form-select">
+                        <option value="">-- Seleccione --</option>
+                        <option value="EFECTIVO">Efectivo</option>
+                        <option value="TARJETA">Tarjeta</option>
+                        <option value="SINPE">SINPE</option>
+                    </select>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Registrar Venta</button>
+                </div>
+
             </form>
         </div>
     </div>

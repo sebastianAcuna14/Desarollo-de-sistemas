@@ -3,7 +3,11 @@ wwwroot\css\site.css
 wwwroot\css\Styles.css
 wwwroot\favicon.ico
 wwwroot\imagenes\01d5c93f-9492-443d-b9c8-488b2408f7a3.jpg
+wwwroot\imagenes\23fda8a9-07d1-4f25-8f47-776fb85643d7.jpeg
 wwwroot\imagenes\3015b5c7-afe0-4c9d-a8dc-766221a7c817.webp
+wwwroot\imagenes\95a138b3-455d-45b6-a130-de8f960da163.jpeg
+wwwroot\imagenes\abeab54f-d1f6-41eb-abaf-957ba784a0ba.jpeg
+wwwroot\imagenes\acf4a6ca-2b71-43f4-a154-1d5db83dd619.jpeg
 wwwroot\imagenes\c2ba2996-efc3-40b9-9354-53bab94b22df.webp
 wwwroot\imagenes\f60fbf4d-2e39-4530-a9e6-7e5786f6a901.jpg
 wwwroot\images\2.jpg

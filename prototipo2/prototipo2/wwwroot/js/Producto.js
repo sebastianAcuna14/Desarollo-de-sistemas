@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
         new simpleDatatables.DataTable(datatablesSimple, {
             perPage: 10,
             labels: {
-                placeholder: "Buscar Empleado...",
-                noRows: "No se encontraron Empleados",
-                info: "Mostrando {start} a {end} de {rows} empleados",
+                placeholder: "Buscar Productos...",
+                noRows: "No se encontraron Productos",
+                info: "Mostrando {start} a {end} de {rows} Productos",
             }
             // No definir columnas si no hay columnas especiales como fechas
         });

@@ -21,12 +21,11 @@ namespace prototipo2.Controllers
 
 
 
-        [Sesiones]
+
         public IActionResult CrearEmpleado()
         {
             return View();
         }
-        [Sesiones]
         public IActionResult ListaEmpleado()
         {
             using (var context = new SqlConnection(_configuration.GetSection("ConnectionStrings:connection").Value))

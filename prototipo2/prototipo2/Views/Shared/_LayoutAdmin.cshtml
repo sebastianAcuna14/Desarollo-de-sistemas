@@ -21,7 +21,7 @@
 
             <h2 class="h4 mb-0 text-white d-flex align-items-center justify-content-center justify-content-lg-start">
                 <i class="fas fa-cogs me-2 text-warning"></i>
-                <span>ElectroMecánica</span>
+                <span>Aplecsa</span>
 
             </h2>
         </a>
@@ -75,10 +75,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-warehouse"></i></div>
                                 Proveedor
                             </a>
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                           @*  <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-warehouse"></i></div>
                                 Productos
-                            </a>
+                            </a> *@
                             <a class="nav-link" asp-area="" asp-controller="Finanzas" asp-action="Index">
                                 <div class="sb-nav-link-icon"><i class="fas fa-coins me-2"></i></div>
                                 Finanzas
@@ -87,10 +87,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-warehouse"></i></div>
                                 Empleados
                             </a>
-                            <a class="nav-link" href="tables.html">
+                           @*  <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Clientes
-                            </a>
+                            </a> *@
                         }
 
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -119,23 +119,23 @@
                                 </div>
                             </nav>
                         </div>
-                        <a class="nav-link" asp-area="" asp-controller="Empleado" asp-action="ListaEmpleado">
+                      @*   <a class="nav-link" asp-area="" asp-controller="Empleado" asp-action="ListaEmpleado">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-warehouse"></i></div>
                             Empleados
-                        </a>
+                        </a> *@
                         @*  <a class="nav-link" asp-area="" asp-controller="Empleado" asp-action="ListaEmpleado"
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Empleados
                         </a> *@
-                        <a class="nav-link" href="tables.html">
+                       @*  <a class="nav-link" href="tables.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Clientes
-                        </a>
+                        </a> *@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as: @Context.Session.GetString("NombreUsuario")</div>
-                    Start Bootstrap
+             
                 </div>
 
             </nav>

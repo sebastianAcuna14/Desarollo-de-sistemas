@@ -5,128 +5,129 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<!-- Estilos de Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card mt-5 shadow rounded-4">
+            <div class="card-header bg-warning text-dark rounded-top-4 d-flex justify-content-between align-items-center">
+                <h4 class="mb-0"><i class="bi bi-receipt-cutoff me-2"></i>@ViewData["Title"]</h4>
+                @* <span class="badge bg-light text-dark">ID: @Model.Id</span> *@
+            </div>
+            <div class="card-body">
 
-<div class="container mt-4">
-    <div class="card shadow-sm rounded-3">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h4 class="mb-0"><i class="bi bi-receipt-cutoff me-2"></i>Detalle de Venta</h4>
-            <span class="badge bg-light text-dark">ID: @Model.Id</span>
-        </div>
-        <div class="card-body">
-            <section class="mb-4">
-                <h5 class="text-muted"><i class="bi bi-calendar3 me-1"></i>Información General</h5>
-                <p><strong>Fecha:</strong> @Model.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
-            </section>
-
-            <section class="mb-4">
-                <h5 class="text-muted"><i class="bi bi-box-seam me-1"></i>Productos Vendidos</h5>
-                <table class="table table-bordered table-striped">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio Unitario</th>
-                            <th>Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Productos)
-                        {
-                            <tr>
-                                <td>@item.Producto</td>
-                                <td>@item.Cantidad</td>
-                                <td>₡@item.PrecioUnitario</td>
-                                <td>₡@(item.Cantidad * item.PrecioUnitario)</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="mb-4">
-                <h5 class="text-muted"><i class="bi bi-credit-card me-1"></i>Métodos de Pago</h5>
-                <table class="table table-bordered">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Tipo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var pago in Model.Pagos)
-                        {
-                            <tr>
-                                <td>@pago.Tipo</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </section>
-
-            @if (Model.Devoluciones != null && Model.Devoluciones.Any())
-            {
                 <section class="mb-4">
-                    <h5 class="text-muted"><i class="bi bi-arrow-counterclockwise me-1"></i>Devoluciones</h5>
-                    @foreach (var devolucion in Model.Devoluciones)
-                    {
-                        <div class="border p-3 mb-3 rounded bg-light">
-                            <p><strong>Fecha:</strong> @devolucion.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
-                            <p><strong>Motivo:</strong> @devolucion.Motivo</p>
+                    <h5 class="text-muted"><i class="bi bi-calendar3 me-1"></i>Información General</h5>
+                    <p><strong>Fecha:</strong> @Model.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
+                </section>
 
-                            @if (devolucion.ProductosDevueltos != null && devolucion.ProductosDevueltos.Any())
+                <section class="mb-4">
+                    <h5 class="text-muted"><i class="bi bi-box-seam me-1"></i>Productos Vendidos</h5>
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Productos)
                             {
-                                <table class="table table-sm table-bordered">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Producto</th>
-                                            <th>Cantidad</th>
-                                            <th>Observaciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var item in devolucion.ProductosDevueltos)
-                                        {
-                                            <tr>
-                                                <td>@item.Producto</td>
-                                                <td>@item.Cantidad</td>
-                                                <td>@item.Observaciones</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                                <tr>
+                                    <td>@item.Producto</td>
+                                    <td>@item.Cantidad</td>
+                                    <td>₡@item.PrecioUnitario</td>
+                                    <td>₡@(item.Cantidad * item.PrecioUnitario)</td>
+                                </tr>
                             }
-                        </div>
-                    }
+                        </tbody>
+                    </table>
                 </section>
-            }
 
-            @if (Model.NotaCredito != null)
-            {
                 <section class="mb-4">
-                    <h5 class="text-muted"><i class="bi bi-receipt me-1"></i>Nota de Crédito</h5>
-                    <div class="border-start border-4 border-success ps-3">
-                        <p><strong>Fecha:</strong> @Model.NotaCredito.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
-                        <p><strong>Monto:</strong> ₡@Model.NotaCredito.Monto</p>
-                        <p><strong>Comentario:</strong> @Model.NotaCredito.Comentario</p>
-                    </div>
+                    <h5 class="text-muted"><i class="bi bi-credit-card me-1"></i>Métodos de Pago</h5>
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var pago in Model.Pagos)
+                            {
+                                <tr>
+                                    <td>@pago.Tipo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </section>
-            }
 
-            <div class="mt-4 d-flex justify-content-between">
-                <div>
-                    @if (Model.NotaCredito == null)
-                    {
-                        <a asp-controller="Ventas" asp-action="AgregarDevolucion" asp-route-id="@Model.Id" class="btn btn-outline-danger me-2">
-                            <i class="bi bi-arrow-clockwise"></i> Registrar Devolución
+                @if (Model.Devoluciones != null && Model.Devoluciones.Any())
+                {
+                    <section class="mb-4">
+                        <h5 class="text-muted"><i class="bi bi-arrow-counterclockwise me-1"></i>Devoluciones</h5>
+                        @foreach (var devolucion in Model.Devoluciones)
+                        {
+                            <div class="border p-3 mb-3 rounded bg-light">
+                                <p><strong>Fecha:</strong> @devolucion.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
+                                <p><strong>Motivo:</strong> @devolucion.Motivo</p>
+
+                                @if (devolucion.ProductosDevueltos != null && devolucion.ProductosDevueltos.Any())
+                                {
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Producto</th>
+                                                <th>Cantidad</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in devolucion.ProductosDevueltos)
+                                            {
+                                                <tr>
+                                                    <td>@item.Producto</td>
+                                                    <td>@item.Cantidad</td>
+                                                    <td>@item.Observaciones</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                            </div>
+                        }
+                    </section>
+                }
+
+                @if (Model.NotaCredito != null)
+                {
+                    <section class="mb-4">
+                        <h5 class="text-muted"><i class="bi bi-receipt me-1"></i>Nota de Crédito</h5>
+                        <div class="border-start border-4 border-success ps-3">
+                            <p><strong>Fecha:</strong> @Model.NotaCredito.Fecha.ToString("dd/MM/yyyy hh:mm tt")</p>
+                            <p><strong>Monto:</strong> ₡@Model.NotaCredito.Monto</p>
+                            <p><strong>Comentario:</strong> @Model.NotaCredito.Comentario</p>
+                        </div>
+                    </section>
+                }
+
+                <div class="d-flex justify-content-between mt-4">
+                    <div>
+                        @if (Model.NotaCredito == null)
+                        {
+                            <a asp-controller="Ventas" asp-action="AgregarDevolucion" asp-route-id="@Model.Id" class="btn btn-outline-danger me-2">
+                                <i class="bi bi-arrow-clockwise me-1"></i>Registrar Devolución
+                            </a>
+                        }
+                    </div>
+                    <div>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left me-1"></i>Volver al Listado
                         </a>
-                    }
+                    </div>
                 </div>
-                <div>
-                    <a asp-action="Index" class="btn btn-secondary">
-                        <i class="bi bi-arrow-left"></i> Volver al Listado
-                    </a>
-                </div>
+
             </div>
         </div>
     </div>

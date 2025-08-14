@@ -1573,3 +1573,5 @@ BEGIN
     VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria, @ImagenUrl);
 END
 
+select * from Empleado
+select * from Cliente

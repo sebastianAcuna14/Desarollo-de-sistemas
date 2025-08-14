@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<prototipo2.Models.Empleado>
 
 @{
-    ViewData["Title"] = "Lista de Productos";
+    ViewData["Title"] = "Lista de Empleado";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -14,15 +14,15 @@
 
         <div class="card mt-5 shadow rounded-4">
             <div class="card-body">
-                
-                    <table class="table table-striped table-responsive" id="datatablesSimple" style="width:100%">
+
+                <table class="table table-striped table-responsive" id="datatablesSimple" style="width:100%">
                     <thead class="table-secondary">
                         <tr>
-              
+
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Cedula</th>
-                            <th>Telefono</th> 
+                            <th>Telefono</th>
                             <th>Correo</th>
                             <th>Contraseña</th>
                             <th>Rol</th>
@@ -33,7 +33,7 @@
                         @foreach (var empleado in Model)
                         {
                             <tr>
-                                 @* <td>@empleado.IdEmpleado</td> *@
+                                @* <td>@empleado.IdEmpleado</td> *@
                                 <td>@empleado.Nombre</td>
                                 <td>@empleado.Apellido</td>
                                 <td>@empleado.Cedula</td>
@@ -41,19 +41,16 @@
                                 <td>@empleado.Correo</td>
                                 <td>@empleado.Contrasena</td>
                                 <td>@empleado.IdRol</td>
-                               
+
                                 <td>
                                     <a asp-controller="Empleado"
-                                       asp-action="Editar"
+                                       asp-action="EditarEmpleado"
                                        asp-route-id="@empleado.IdEmpleado"
                                        class="btn btn-warning btn-sm">Editar</a>
 
-                                    <a asp-controller="Empleado"
-                                       asp-action="Eliminar"
-                                       asp-route-id="@empleado.IdEmpleado"
-                                       class="btn btn-danger btn-sm">Eliminar</a>
+                                    <a asp-controller="Empleado" asp-action="EliminarEmpleado" asp-route-id="@empleado.IdEmpleado" class="btn btn-danger btn-sm">Eliminar</a>
 
-                                 
+
 
 
                                 </td>
