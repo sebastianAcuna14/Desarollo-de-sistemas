@@ -496,81 +496,183 @@ BEGIN
     WHERE Id = @Id
 END
 
---  Inventario
-
---Crear un producto 
+--  Inventario 
+ 
 CREATE OR ALTER PROCEDURE CrearProducto
+
     @Nombre       VARCHAR(100),
+
     @Descripcion  VARCHAR(255),
+
     @Cantidad     INT,
+
     @Precio       DECIMAL(10, 2),
+
     @IdProveedor  INT,
-    @IdCategoria  INT
+
+    @IdCategoria  INT,
+
+    @ImagenUrl    NVARCHAR(500) 
+
 AS
+
 BEGIN
-    INSERT INTO INVENTARIO (Nombre, Descripcion, Cantidad, Precio, IdProveedor, IdCategoria)
-    VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria);
+
+    INSERT INTO INVENTARIO (Nombre, Descripcion, Cantidad, Precio, IdProveedor, IdCategoria, ImagenUrl)
+
+    VALUES (@Nombre, @Descripcion, @Cantidad, @Precio, @IdProveedor, @IdCategoria, @ImagenUrl);
+
+END
+ 
+--Listar productos
+
+CREATE OR ALTER PROCEDURE ObtenerProductos
+
+AS
+
+BEGIN
+
+    SELECT 
+
+        I.IdProducto,
+
+        I.Nombre,
+
+        I.Descripcion,
+
+        I.Cantidad,
+
+        I.Precio,
+
+        I.IdProveedor,
+
+        P.NombreEmpresa   AS NombreProveedor,
+
+        I.IdCategoria,
+
+        C.Nombre          AS NombreCategoria,
+
+        I.ImagenUrl      
+
+    FROM 
+
+        INVENTARIO I
+
+    INNER JOIN 
+
+        PROVEEDOR P   ON I.IdProveedor  = P.IDProveedor
+
+    INNER JOIN 
+
+        Categoria C   ON I.IdCategoria  = C.IdCategoria;
+
+END;
+
+GO
+ 
+ALTER PROCEDURE ActualizarProducto
+
+    @IdProducto INT,
+
+    @Nombre NVARCHAR(100),
+
+    @Descripcion NVARCHAR(255),
+
+    @Cantidad INT,
+
+    @Precio DECIMAL(18,2),
+
+    @IdProveedor INT,
+
+    @IdCategoria INT,
+
+    @ImagenUrl NVARCHAR(500)
+
+AS
+
+BEGIN
+
+    UPDATE INVENTARIO
+
+    SET Nombre = @Nombre,
+
+        Descripcion = @Descripcion,
+
+        Cantidad = @Cantidad,
+
+        Precio = @Precio,
+
+        IdProveedor = @IdProveedor,
+
+        IdCategoria = @IdCategoria,
+
+        ImagenUrl = @ImagenUrl -- NUEVO
+
+    WHERE IdProducto = @IdProducto;
+
+END
+ 
+--Para listarlo por ID
+
+CREATE OR ALTER PROCEDURE ObtenerProductoPorId
+
+    @IdProducto INT
+
+AS
+
+BEGIN
+
+    SELECT 
+
+        I.IdProducto,
+
+        I.Nombre,
+
+        I.Descripcion,
+
+        I.Cantidad,
+
+        I.Precio,
+
+        I.IdProveedor,
+
+        P.NombreEmpresa AS NombreProveedor,
+
+        I.IdCategoria,
+
+        C.Nombre AS NombreCategoria,
+
+        I.ImagenUrl       -- si ya agregaste columna de imagen
+
+    FROM INVENTARIO I
+
+    JOIN Proveedor P ON P.IDProveedor = I.IdProveedor
+
+    JOIN Categoria C ON C.IdCategoria = I.IdCategoria
+
+    WHERE I.IdProducto = @IdProducto;
+
 END
 
-
---Listar productos
-CREATE OR ALTER PROCEDURE ObtenerProductos
-AS
-BEGIN
-    SELECT 
-        I.IdProducto,
-        I.Nombre,
-        I.Descripcion,
-        I.Cantidad,
-        I.Precio,
-        I.IdProveedor,
-        P.NombreEmpresa   AS NombreProveedor,
-        I.IdCategoria,
-        C.Nombre          AS NombreCategoria
-    FROM 
-        INVENTARIO I
-    INNER JOIN 
-        PROVEEDOR P   ON I.IdProveedor  = P.IDProveedor
-    INNER JOIN 
-        Categoria C   ON I.IdCategoria  = C.IdCategoria;
-END;
 GO
-
-
---Actualizar/editar prdcto
-CREATE OR ALTER PROCEDURE ActualizarProducto
-    @IdProducto   INT,
-    @Nombre       VARCHAR(100),
-    @Descripcion  VARCHAR(255),
-    @Cantidad     INT,
-    @Precio       DECIMAL(10,2),
-    @IdProveedor  INT,
-    @IdCategoria  INT
-AS
-BEGIN
-    UPDATE INVENTARIO
-    SET 
-        Nombre      = @Nombre,
-        Descripcion = @Descripcion,
-        Cantidad    = @Cantidad,
-        Precio      = @Precio,
-        IdProveedor = @IdProveedor,
-        IdCategoria = @IdCategoria
-    WHERE IdProducto = @IdProducto;
-END;
-GO
-
-
-
+ 
+ 
 --Eliminar el producto del inventario
-CREATE OR ALTER PROCEDURE EliminarProducto
-    @IdProducto INT
-AS
-BEGIN
-    DELETE FROM INVENTARIO
-    WHERE IdProducto = @IdProducto
-END;
 
+CREATE OR ALTER PROCEDURE EliminarProducto
+
+    @IdProducto INT
+
+AS
+
+BEGIN
+
+    DELETE FROM INVENTARIO
+
+    WHERE IdProducto = @IdProducto
+
+END;
+ 
 
 --  Categoria
 

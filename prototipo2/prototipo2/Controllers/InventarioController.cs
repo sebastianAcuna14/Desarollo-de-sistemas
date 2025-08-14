@@ -26,8 +26,7 @@ namespace prototipo2.Controllers
         {
             using var con = Conexion();
             var productos = con.Query<Producto>(
-                "ObtenerProductos",
-                commandType: CommandType.StoredProcedure
+                "ObtenerProductos"
             ).ToList();
             return View(productos);
         }
@@ -38,14 +37,12 @@ namespace prototipo2.Controllers
         {
             using var con = Conexion();
             var proveedores = con.Query<Proveedor>(
-                "ObtenerProveedores",
-                commandType: CommandType.StoredProcedure
+                "ObtenerProveedores"
             ).ToList();
             ViewBag.ListaProveedores = new SelectList(proveedores, "IDProveedor", "NombreEmpresa");
 
             var categorias = con.Query<Categoria>(
-                "ObtenerCategorias",
-                commandType: CommandType.StoredProcedure
+                "ObtenerCategorias"
             ).ToList();
             ViewBag.ListaCategorias = new SelectList(categorias, "IdCategoria", "Nombre");
 
@@ -62,14 +59,12 @@ namespace prototipo2.Controllers
             if (!ModelState.IsValid)
             {
                 var proveedores = con.Query<Proveedor>(
-                    "ObtenerProveedores",
-                    commandType: CommandType.StoredProcedure
+                    "ObtenerProveedores"
                 ).ToList();
                 ViewBag.ListaProveedores = new SelectList(proveedores, "IDProveedor", "NombreEmpresa");
 
                 var categorias = con.Query<Categoria>(
-                    "ObtenerCategorias",
-                    commandType: CommandType.StoredProcedure
+                    "ObtenerCategorias"
                 ).ToList();
                 ViewBag.ListaCategorias = new SelectList(categorias, "IdCategoria", "Nombre");
 
@@ -104,8 +99,7 @@ namespace prototipo2.Controllers
                     producto.IdProveedor,
                     producto.IdCategoria,
                     producto.ImagenUrl
-                },
-                commandType: CommandType.StoredProcedure
+                }
             );
 
             return RedirectToAction(nameof(Index));
@@ -116,25 +110,19 @@ namespace prototipo2.Controllers
         public IActionResult Editar(int id)
         {
             using var con = Conexion();
+
             var producto = con.QueryFirstOrDefault<Producto>(
                 "ObtenerProductoPorId",
-                new { IdProducto = id },
-                commandType: CommandType.StoredProcedure
+                new { IdProducto = id }
             );
 
             if (producto == null)
                 return NotFound();
 
-            var proveedores = con.Query<Proveedor>(
-                "ObtenerProveedores",
-                commandType: CommandType.StoredProcedure
-            ).ToList();
+            var proveedores = con.Query<Proveedor>("ObtenerProveedores", commandType: CommandType.StoredProcedure).ToList();
             ViewBag.ListaProveedores = new SelectList(proveedores, "IDProveedor", "NombreEmpresa");
 
-            var categorias = con.Query<Categoria>(
-                "ObtenerCategorias",
-                commandType: CommandType.StoredProcedure
-            ).ToList();
+            var categorias = con.Query<Categoria>("ObtenerCategorias", commandType: CommandType.StoredProcedure).ToList();
             ViewBag.ListaCategorias = new SelectList(categorias, "IdCategoria", "Nombre");
 
             return View(producto);
@@ -143,27 +131,24 @@ namespace prototipo2.Controllers
         // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Editar(Producto producto,IFormFile Imagen)
+        public IActionResult Editar(Producto producto, IFormFile Imagen)
         {
             using var con = Conexion();
 
             if (!ModelState.IsValid)
             {
                 var proveedores = con.Query<Proveedor>(
-                    "ObtenerProveedores",
-                    commandType: CommandType.StoredProcedure
+                    "ObtenerProveedores"
                 ).ToList();
                 ViewBag.ListaProveedores = new SelectList(proveedores, "IDProveedor", "NombreEmpresa");
 
                 var categorias = con.Query<Categoria>(
-                    "ObtenerCategorias",
-                    commandType: CommandType.StoredProcedure
+                    "ObtenerCategorias"
                 ).ToList();
                 ViewBag.ListaCategorias = new SelectList(categorias, "IdCategoria", "Nombre");
 
                 return View(producto);
             }
-            // 📌 Guardar nueva imagen si el usuario subió una
             if (Imagen != null && Imagen.Length > 0)
             {
                 var carpetaDestino = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagenes");
@@ -193,8 +178,7 @@ namespace prototipo2.Controllers
                     producto.IdProveedor,
                     producto.IdCategoria,
                     producto.ImagenUrl
-                },
-                commandType: CommandType.StoredProcedure
+                }
             );
 
             return RedirectToAction(nameof(Index));
@@ -205,10 +189,10 @@ namespace prototipo2.Controllers
         public IActionResult Eliminar(int id)
         {
             using var con = Conexion();
+
             var producto = con.QueryFirstOrDefault<Producto>(
                 "ObtenerProductoPorId",
-                new { IdProducto = id },
-                commandType: CommandType.StoredProcedure
+                new { IdProducto = id }
             );
 
             if (producto == null)
@@ -225,8 +209,7 @@ namespace prototipo2.Controllers
             using var con = Conexion();
             con.Execute(
                 "EliminarProducto",
-                new { IdProducto = id },
-                commandType: CommandType.StoredProcedure
+                new { IdProducto = id }
             );
             return RedirectToAction(nameof(Index));
         }
