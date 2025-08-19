@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\",
+  "WorkspaceRootPath": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\views\\pedido\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\pedido\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\cliente\\registrocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\cliente\\registrocliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\wwwroot\\js\\pedido.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\servicios\\sesiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\servicios\\sesiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\views\\carrito\\paypal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\luis\\documents\\desarrollo\\miproyectoanalisis\\prototipo2\\prototipo2\\views\\carrito\\paypal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\views\\carrito\\paypal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|c:\\users\\sebas\\onedrive\\documentos\\github\\desarollo-de-sistemas\\prototipo2\\prototipo2\\controllers\\carritocontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4475C9AB-A7EB-4E8C-8B2A-35FFB97679B8}|prototipo2\\prototipo2.csproj|solutionrelative:prototipo2\\controllers\\carritocontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,19 +42,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 3177,
-          "SelectedChildIndex": 66,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegistroCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Cliente\\RegistroCliente.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Cliente\\RegistroCliente.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Cliente\\RegistroCliente.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Cliente\\RegistroCliente.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHMAAACGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-19T23:12:58.708Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-19T22:47:47.733Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Carrito\\Index.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Carrito\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Carrito\\Index.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Carrito\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAHoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-19T22:45:13.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Catalogo\\Index.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Catalogo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Catalogo\\Index.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Catalogo\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAIIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-19T22:13:59.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Sesiones.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Servicios\\Sesiones.cs",
+              "RelativeDocumentMoniker": "prototipo2\\Servicios\\Sesiones.cs",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Servicios\\Sesiones.cs",
+              "RelativeToolTip": "prototipo2\\Servicios\\Sesiones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T21:59:01.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -59,6 +120,22 @@
             {
               "$type": "Bookmark",
               "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -99,6 +176,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{809f6ff3-8092-454a-8003-6d4091f9b5bb}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
@@ -230,10 +311,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
             },
             {
@@ -243,10 +320,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Bookmark",
@@ -290,6 +363,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
@@ -297,81 +374,40 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Pedido\\Index.cshtml",
-              "RelativeDocumentMoniker": "prototipo2\\Views\\Pedido\\Index.cshtml",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Pedido\\Index.cshtml",
-              "RelativeToolTip": "prototipo2\\Views\\Pedido\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-19T20:05:41.558Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Pedido.js",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Pedido.js",
-              "RelativeDocumentMoniker": "prototipo2\\wwwroot\\js\\Pedido.js",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\wwwroot\\js\\Pedido.js",
-              "RelativeToolTip": "prototipo2\\wwwroot\\js\\Pedido.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-19T20:05:18.536Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "prototipo2\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "prototipo2\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAqwHMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-19T21:57:35.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\appsettings.json",
-              "RelativeDocumentMoniker": "prototipo2\\appsettings.json",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\appsettings.json",
-              "RelativeToolTip": "prototipo2\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-19T20:03:17.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CarritoController .cs",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Controllers\\CarritoController .cs",
-              "RelativeDocumentMoniker": "prototipo2\\Controllers\\CarritoController .cs",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Controllers\\CarritoController .cs",
-              "RelativeToolTip": "prototipo2\\Controllers\\CarritoController .cs",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T03:30:14.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Paypal.cshtml",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
               "RelativeDocumentMoniker": "prototipo2\\Views\\Carrito\\Paypal.cshtml",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Carrito\\Paypal.cshtml",
               "RelativeToolTip": "prototipo2\\Views\\Carrito\\Paypal.cshtml",
               "ViewState": "AgIAALoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-17T03:29:24.724Z"
+              "WhenOpened": "2025-08-17T03:29:24.724Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "C:\\Users\\sebas\\OneDrive\\Documentos\\GitHub\\Desarollo-de-sistemas\\prototipo2\\prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\Desarrollo\\MiProyectoAnalisis\\prototipo2\\prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
               "RelativeToolTip": "prototipo2\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAHkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-17T03:15:54.625Z",
               "EditorCaption": ""
@@ -382,10 +418,6 @@
           "DockedWidth": 65,
           "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
@@ -417,6 +449,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cdbdee54-b399-484b-b763-db2c3393d646}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

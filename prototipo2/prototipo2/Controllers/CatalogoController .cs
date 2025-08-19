@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using prototipo2.Models;
 using System.Data;
+using prototipo2.Servicios;
 
 namespace prototipo2.Controllers
 {
@@ -16,6 +17,7 @@ namespace prototipo2.Controllers
         }
 
         // ✅ Mostrar todos los productos en el catálogo
+        [Sesiones]
         public IActionResult Index()
         {
             var connectionString = _configuration.GetConnectionString("Connection");

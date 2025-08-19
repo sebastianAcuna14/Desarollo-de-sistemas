@@ -75,7 +75,7 @@
             </div>
 
             <!-- Productos -->
-            <div class="col-lg-9">
+            <div class="col-lg-8">
                 <div class="row g-4">
                     @foreach (var producto in Model)
                     {
@@ -83,7 +83,10 @@
 
                         if (!string.IsNullOrEmpty(producto.ImagenUrl))
                         {
-                            imgPath = "/" + producto.ImagenUrl;
+                            // Asegúrate de que la ruta empiece con "/"
+                            imgPath = producto.ImagenUrl.StartsWith("/")
+                            ? producto.ImagenUrl
+                            : "/" + producto.ImagenUrl;
                         }
                         else
                         {

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using Microsoft.Data.SqlClient;
+using prototipo2.Servicios;
 
 namespace prototipo2.Controllers
 {
@@ -24,7 +25,7 @@ namespace prototipo2.Controllers
         }
 
         private IDbConnection Connection => new SqlConnection(_connectionString);
-
+        [Sesiones]
         public async Task<IActionResult> Index()
         {
             using var db = Connection;

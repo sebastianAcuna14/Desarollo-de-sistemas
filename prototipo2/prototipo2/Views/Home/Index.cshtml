@@ -42,16 +42,14 @@
                         <a class="nav-link active px-4" href="index.html">Inicio</a>
                     </li>
                     <a asp-controller="Catalogo" asp-action="Index" class="nav-link text-dark">
-                        Ver Catálogo
+                        Ver Productos
                     </a>
 
                     <li class="nav-item">
-                        <a class="nav-link px-4" href="envios.html">Envíos</a>
+                        <a class="nav-link px-4" href="https://api.whatsapp.com/send?phone=50689551997l">Contactenos</a>
                     </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link px-4" asp-area="" asp-controller="AdminController1" asp-action="Admi">Reparaciones</a>
-                    </li>
+                  
                      @if (rol == "Administrador")
                         {
                     <li class="nav-item">
@@ -69,15 +67,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h1 class="display-4 fw-bold mb-3 text-dark">Soluciones Electromecánicas <span class="text-warning">de Calidad</span></h1>
-                    <p class="lead mb-4">Ofrecemos los mejores productos y servicios para todas sus necesidades electromecánicas.</p>
+                    <h1 class="display-4 fw-bold mb-3 text-dark">Soluciones Electromecánicas <span class="text-dark">de Calidad</span></h1>
+                    <p class="fw-bold lead mb-4">Ofrecemos los mejores productos y servicios para todas sus necesidades electromecánicas.</p>
                     <div class="d-flex flex-wrap gap-2">
                         <a asp-controller="Catalogo" asp-action="Index" class="btn btn-outline-dark">
                             Ver Catálogo
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=50689551997" class="btn btn-outline-dark">
-                            Contáctenos
-                        </a>
+                      
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -116,6 +112,17 @@
                                    
                                 </div>
                             </div>
+                            <div class="carousel-item">
+                                <img src="~/images/8.jpg" class="d-block w-auto carousel-img" alt="Servicio Técnico">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/7.jpg" class="d-block w-auto carousel-img" alt="Servicio Técnico">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+
                            
                         </div>
 
@@ -195,13 +202,14 @@
                         if (!string.IsNullOrEmpty(producto.ImagenUrl))
                         {
                             // Se respeta la ruta que viene desde la BD
-                            imgPath = Url.Content("~/" + producto.ImagenUrl.Replace("\\", "/"));
+                              imgPath = "/" + producto.ImagenUrl;
                         }
-                        else
+                         else
                         {
                             // Imagen por defecto si no hay URL
                             imgPath = Url.Content("~/images/6.jpg");
-                        }
+                          
+                        } 
 
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
