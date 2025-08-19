@@ -55,12 +55,6 @@ C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\proto
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets\msbuild.prototipo2.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets\msbuild.prototipo2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets\msbuild.build.prototipo2.props
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.prototipo2.props
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.prototipo2.props
-C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\prototipo2.dll
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\refint\prototipo2.dll
@@ -1419,3 +1413,9 @@ C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\proto
 C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\JOSHUA\Desktop\Nueva carpeta\prototipo2\prototipo2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Luis\Documents\Desarrollo\MiProyectoAnalisis\prototipo2\prototipo2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\sebas\OneDrive\Documentos\GitHub\Desarollo-de-sistemas\prototipo2\prototipo2\obj\Debug\net8.0\staticwebassets.build.json.cache
